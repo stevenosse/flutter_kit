@@ -1,4 +1,4 @@
-class AppInitialiser {
+class AppInitializer {
   Future<void> preAppRun() async {}
 
   Future<void> run() async {}
