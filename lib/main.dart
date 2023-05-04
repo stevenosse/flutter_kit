@@ -8,13 +8,14 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   
   final AppInitializer appInitializer = AppInitializer();
+
   runZonedGuarded(
     () async {
       await appInitializer.preAppRun();
 
-      runApp(const Application());
+      runApp(Application());
 
-      await appInitializer.postAppRun();
+      appInitializer.postAppRun();
     },
     (error, stack) {},
   );

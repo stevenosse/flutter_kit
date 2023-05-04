@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_boilerplate/src/core/theme/app_colors.dart';
+
+import 'app_colors.dart';
 
 class AppTheme {
   static ThemeData _buildTheme({required Brightness brightness, required AppColors colors}) {
     return ThemeData(
       brightness: brightness,
-      backgroundColor: colors.background,
       scaffoldBackgroundColor: colors.background,
       textTheme: _buildTextTheme(colors: colors),
       appBarTheme: AppBarTheme(

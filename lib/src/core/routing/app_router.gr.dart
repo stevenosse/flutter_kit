@@ -1,47 +1,39 @@
-// **************************************************************************
-// AutoRouteGenerator
-// **************************************************************************
-
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
-// AutoRouteGenerator
+// AutoRouterGenerator
 // **************************************************************************
-//
+
 // ignore_for_file: type=lint
+// coverage:ignore-file
 
 part of 'app_router.dart';
 
-class _$AppRouter extends RootStackRouter {
-  _$AppRouter([GlobalKey<NavigatorState>? navigatorKey]) : super(navigatorKey);
+abstract class _$AppRouter extends RootStackRouter {
+  // ignore: unused_element
+  _$AppRouter({super.navigatorKey});
 
   @override
   final Map<String, PageFactory> pagesMap = {
     HomeRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
+      return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const HomeScreen(),
       );
     }
   };
-
-  @override
-  List<RouteConfig> get routes => [
-        RouteConfig(
-          HomeRoute.name,
-          path: '/',
-        )
-      ];
 }
 
 /// generated route for
 /// [HomeScreen]
 class HomeRoute extends PageRouteInfo<void> {
-  const HomeRoute()
+  const HomeRoute({List<PageRouteInfo>? children})
       : super(
           HomeRoute.name,
-          path: '/',
+          initialChildren: children,
         );
 
   static const String name = 'HomeRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
