@@ -49,6 +49,16 @@ class I18n {
   static I18n? maybeOf(BuildContext context) {
     return Localizations.of<I18n>(context, I18n);
   }
+
+  /// `Count`
+  String get count {
+    return Intl.message(
+      'Count',
+      name: 'count',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<I18n> {

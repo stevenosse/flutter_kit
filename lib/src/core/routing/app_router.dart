@@ -8,7 +8,6 @@ part 'app_router.gr.dart';
 )
 class AppRouter extends _$AppRouter {
   @override
-  // TODO: implement routes
   List<AutoRoute> routes = [
     AutoRoute(page: HomeRoute.page, initial: true),
   ];
