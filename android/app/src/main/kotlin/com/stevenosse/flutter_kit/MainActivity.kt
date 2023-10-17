@@ -1,4 +1,4 @@
-package com.mobitra.flutter_boilerplate
+package com.stevenosse.flutter_kit
 
 import io.flutter.embedding.android.FlutterActivity
 

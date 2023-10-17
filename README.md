@@ -1,6 +1,8 @@
 # Flutter Kit
 This kit is a boilerplate for Flutter projects. It comes with a set of preconfigured features and utilities to help you get started with your project.
 
+## Get started
+
 ## Features
 This kit comes with a set of preconfigured features and utilities:
 

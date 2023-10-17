@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_boilerplate/src/core/theme/color_schemes.g.dart';
+import 'package:flutter_kit/src/core/theme/color_schemes.g.dart';
 
 class AppTheme {
   static ThemeData _buildTheme({required Brightness brightness}) {

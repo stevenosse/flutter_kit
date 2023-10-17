@@ -1,9 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_boilerplate/src/core/i18n/l10n.dart';
-import 'package:flutter_boilerplate/src/core/routing/app_router.dart';
-import 'package:flutter_boilerplate/src/core/theme/app_theme.dart';
-import 'package:flutter_boilerplate/src/shared/locator.dart';
+import 'package:flutter_kit/src/core/i18n/l10n.dart';
+import 'package:flutter_kit/src/core/routing/app_router.dart';
+import 'package:flutter_kit/src/core/theme/app_theme.dart';
+import 'package:flutter_kit/src/shared/locator.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 class Application extends StatelessWidget {

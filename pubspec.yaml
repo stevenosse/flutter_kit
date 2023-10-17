@@ -1,4 +1,4 @@
-name: flutter_boilerplate
+name: flutter_kit
 description: A boilerplate for Flutter Projects using BLoC Architecture
 
 publish_to: 'none'
