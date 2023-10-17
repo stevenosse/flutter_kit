@@ -3,6 +3,24 @@ This kit is a boilerplate for Flutter projects. It comes with a set of preconfig
 
 ## Get started
 
+### 1. Clone the repository
+```bash
+git clone git@github.com:stevenosse/flutter_kit.git
+```
+
+### 2. Customize the project
+  <!-- warning icon -->
+<img src="https://img.icons8.com/color/48/000000/warning-shield.png" width="20" height="20" /> **Warning**: This command has not been tested on Windows. If you are using Windows, please open an issue if you encounter any problems.
+
+````bash
+dart run bin/install.dart --package-name=your_package_name --name=app_name
+````
+
+This command will:
+- Rename the project in the `pubspec.yaml` file and all files using the package:flutter_kit import
+- Change the package name and bundle identifier for both android and ios projects
+- Rename the android native app code directory
+
 ## Features
 This kit comes with a set of preconfigured features and utilities:
 
@@ -38,8 +56,12 @@ An example of a BLoC can be found in the `src/features/home_screen/logic` folder
 ## 🗼 Extensions
 This kit comes with a few extensions on the `BuildContext` and `Iterable` classes. See the `src/shared/extensions` folder for more information.
 
-## 📌 Utility Widgets
+## 📌 Utils
+### Widgets
 This kit comes with a few utility widgets. See the `src/shared/components` folder for more information.
+
+### Assets
+Assets paths are automaticalle generated when using build_runnner thanks to the [flutter_gen](https://pub.dev/packages/https://pub.dev/packages/flutter_gen) package.
 
 ## 🖌️ Theming
 This kit uses the new Material 3 theming system. See the `src/core/theme` folder for more information.
