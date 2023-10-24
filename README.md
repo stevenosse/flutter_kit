@@ -63,8 +63,21 @@ This kit comes with a few utility widgets. See the `src/shared/components` folde
 ### Assets
 Assets paths are automaticalle generated when using build_runnner thanks to the [flutter_gen](https://pub.dev/packages/https://pub.dev/packages/flutter_gen) package.
 
+
+### CLI
+This kit comes with a few CLI commands to make your life easier.
+It uses make:
+
+- Windows: `choco install make`
+- Linux: `sudo apt install make`
+- Mac: `brew install make`
+
+See the `Makefile` for more information.
+
 ## 🖌️ Theming
 This kit uses the new Material 3 theming system. See the `src/core/theme` folder for more information.
+
+The default color scheme is generated using https://m3.material.io/theme-builder#/custom. You can use this tool to generate your own color scheme.
 
 ## 💼 Need a new feature?
 If you need a new feature, please open an issue on the [GitHub repository](https://github.com/stevenosse/flutter_boilerplate/issues/new)
