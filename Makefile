@@ -12,3 +12,11 @@ codegen:
 i18n:
 	@echo "Generating i18n..."
 	dart pub run intl_utils:generate
+
+build-android:
+	@echo "Building Android..."
+	fvm flutter build appbundle --release
+
+build-ios:
+	@echo "Building iOS..."
+	fvm flutter build ios
