@@ -1,8 +1,8 @@
 clean-ios:
 	@echo "Cleaning iOS build files..."
-	fvm flutter clean
+	flutter clean
 	rm -rf ios/Pods ios/Podfile.lock 
-	fvm flutter pub get 
+	flutter pub get 
 	cd ios && pod install && cd ..
 
 codegen:
@@ -15,8 +15,8 @@ i18n:
 
 build-android:
 	@echo "Building Android..."
-	fvm flutter build appbundle --release
+	flutter build appbundle --release
 
 build-ios:
 	@echo "Building iOS..."
-	fvm flutter build ios
+	flutter build ios
