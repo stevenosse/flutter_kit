@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.stevenosse.flutter_kit">
+    package="io.adaptiv.flutter_kit">
 
     <uses-permission android:name="android.permission.INTERNET"/>
 

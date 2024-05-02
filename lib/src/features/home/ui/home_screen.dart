@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_kit/src/core/i18n/l10n.dart';
 import 'package:flutter_kit/src/core/theme/dimens.dart';
-import 'package:flutter_kit/src/features/home_screen/logic/counter_cubit.dart';
+import 'package:flutter_kit/src/features/home/logic/counter_cubit.dart';
 import 'package:flutter_kit/src/shared/components/gap.dart';
 import 'package:flutter_kit/src/shared/extensions/context_extensions.dart';
 

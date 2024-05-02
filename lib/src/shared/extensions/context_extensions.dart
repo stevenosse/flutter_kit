@@ -12,5 +12,11 @@ extension ThemeDataX on BuildContext {
 }
 
 extension MediaQueryX on BuildContext {
-  Size get screenSize => MediaQuery.of(this).size;
+  Size get screenSize => MediaQuery.sizeOf(this);
+
+  Brightness get platformBrightness => MediaQuery.platformBrightnessOf(this);
+
+  EdgeInsets get padding => MediaQuery.paddingOf(this);
+
+  EdgeInsets get viewInsets => MediaQuery.viewInsetsOf(this);
 }

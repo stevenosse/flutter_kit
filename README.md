@@ -9,17 +9,25 @@ git clone git@github.com:stevenosse/flutter_kit.git
 ```
 
 ### 2. Customize the project
-  <!-- warning icon -->
-<img src="https://img.icons8.com/color/48/000000/warning-shield.png" width="20" height="20" /> **Warning**: This command has not been tested on Windows. If you are using Windows, please open an issue if you encounter any problems.
+
+- Install the [rename](https://pub.dev/packages/rename) tool by executing the following command:
 
 ````bash
-dart run bin/install.dart --package-name=your_package_name --name=app_name
+flutter pub global activate rename
 ````
 
-This command will:
-- Rename the project in the `pubspec.yaml` file and all files using the package:flutter_kit import
-- Change the package name and bundle identifier for both android and ios projects
-- Rename the android native app code directory
+#### Change app name
+
+```bash
+$ rename setAppName --targets ios,android --value "MyAppName"
+```
+
+#### Change package name
+
+```bash
+$ rename setBundleId --targets ios,android --value "com.mycompany.myapp"
+```
+
 
 ## Features
 This kit comes with a set of preconfigured features and utilities:
@@ -84,3 +92,6 @@ If you need a new feature, please open an issue on the [GitHub repository](https
 
 ## 📇 Get in touch
 If you have any questions, feel free to contact me on [Twitter](https://twitter.com/nossesteve) 
+
+## TODO
+- [ ] Setup a CI pipeline
