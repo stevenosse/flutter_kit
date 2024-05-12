@@ -9,6 +9,14 @@ extension ThemeDataX on BuildContext {
   TextTheme get textTheme => Theme.of(this).textTheme;
 
   ThemeData get theme => Theme.of(this);
+
+  IconThemeData get iconTheme => Theme.of(this).iconTheme;
+
+  AppBarTheme get appBarTheme => Theme.of(this).appBarTheme;
+
+  BottomAppBarTheme get bottomAppBarTheme => Theme.of(this).bottomAppBarTheme;
+
+  BottomNavigationBarThemeData get bottomNavigationBarTheme => Theme.of(this).bottomNavigationBarTheme;
 }
 
 extension MediaQueryX on BuildContext {
@@ -19,4 +27,6 @@ extension MediaQueryX on BuildContext {
   EdgeInsets get padding => MediaQuery.paddingOf(this);
 
   EdgeInsets get viewInsets => MediaQuery.viewInsetsOf(this);
+
+  TextScaler get textScaler => MediaQuery.textScalerOf(this);
 }

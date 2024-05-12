@@ -69,7 +69,13 @@ This kit comes with a few extensions on the `BuildContext` and `Iterable` classe
 This kit comes with a few utility widgets. See the `src/shared/components` folder for more information.
 
 ### Assets
-Assets paths are automaticalle generated when using build_runnner thanks to the [flutter_gen](https://pub.dev/packages/https://pub.dev/packages/flutter_gen) package.
+Assets paths are automatically generated when using build_runnner thanks to the [flutter_gen](https://pub.dev/packages/https://pub.dev/packages/flutter_gen) package.
+
+Each time you add an asset, run the following command:
+
+```bash
+$ fluttergen
+```
 
 
 ### CLI
