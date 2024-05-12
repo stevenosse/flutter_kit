@@ -1,80 +1,46 @@
 import 'package:flutter/material.dart';
 
-abstract class Gap extends StatelessWidget {
-  const Gap({super.key});
+class Gap extends StatelessWidget {
+  final bool _useSliver;
 
-  const factory Gap.horizontal({
-    Key? key,
-    required double width,
-  }) = _HGap;
+  final double? width;
+  final double? height;
 
-  const factory Gap.vertical({
-    Key? key,
-    required double height,
-  }) = _VGap;
+  const Gap.vertical({
+    super.key,
+    required this.height,
+  })  : width = null,
+        _useSliver = false;
 
-  const factory Gap.horizontalSliver({
-    Key? key,
-    required double width,
-  }) = _HGapSliver;
+  const Gap.horizontal({
+    super.key,
+    required this.width,
+  })  : height = null,
+        _useSliver = false;
 
-  const factory Gap.verticalSliver({
-    Key? key,
-    required double height,
-  }) = _VGapSliver;
+  const Gap.all({
+    super.key,
+    required double size,
+  })  : width = size,
+        height = size,
+        _useSliver = false;
+
+  const Gap.vSliver({
+    super.key,
+    required this.height,
+  })  : width = null,
+        _useSliver = true;
+
+  const Gap.hSliver({
+    super.key,
+    required this.width,
+  })  : height = null,
+        _useSliver = true;
 
   @override
   Widget build(BuildContext context) {
-    return const SizedBox();
+    final child = SizedBox(width: width, height: height);
+
+    return _useSliver ? SliverToBoxAdapter(child: child) : child;
   }
-}
-
-class _VGap extends Gap {
-  const _VGap({
-    super.key,
-    required this.height,
-  });
-
-  final double height;
-
-  @override
-  Widget build(BuildContext context) => SizedBox(height: height);
-}
-
-class _VGapSliver extends StatelessWidget implements _VGap {
-  const _VGapSliver({
-    super.key,
-    required this.height,
-  });
-
-  @override
-  final double height;
-
-  @override
-  Widget build(BuildContext context) => SliverToBoxAdapter(child: SizedBox(height: height));
-}
-
-class _HGap extends Gap {
-  const _HGap({
-    super.key,
-    required this.width,
-  });
-
-  final double width;
-
-  @override
-  Widget build(BuildContext context) => SizedBox(width: width);
-}
-
-class _HGapSliver extends StatelessWidget implements _HGap {
-  const _HGapSliver({
-    super.key,
-    required this.width,
-  });
-
-  @override
-  final double width;
-
-  @override
-  Widget build(BuildContext context) => SliverToBoxAdapter(child: SizedBox(width: width));
 }
