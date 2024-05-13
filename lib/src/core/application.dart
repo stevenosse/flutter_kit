@@ -8,6 +8,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 
 class Application extends StatelessWidget {
   final AppRouter _appRouter;
+  
   Application({
     super.key,
     AppRouter? appRouter,

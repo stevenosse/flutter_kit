@@ -1,5 +1,18 @@
 {
   "@@locale": "en",
 
-  "count": "Count"
+  "login_title": "Login",
+  "login_subtitle": "Let's continue where we left off.",
+  "login_emailLabel": "Email",
+  "login_emailHint": "Ex: KpNqg@example.com",
+  "login_passwordLabel": "Password",
+  "login_passwordHint": "************",
+  "login_forgotPasswordLabel": "Forgot password?",
+  "login_googleBtnLabel": "Sign in with Google",
+  "login_appleBtnLabel": "Sign in with Apple",
+  "login_submitBtnLabel": "Login",
+
+  "loadingDialog_content": "Please wait...",
+
+  "or": "OR"
 }

@@ -1,5 +1,32 @@
-# Flutter Kit
-This kit is a boilerplate for Flutter projects. It comes with a set of preconfigured features and utilities to help you get started with your project.
+<h1 align="center"><b>Flutter Kit</b></h1>
+
+<p align="center">Opinionated flutter starter project using feature-first folder structure.</p>
+
+<p align="center">
+    <a href="https://twitter.com/nossesteve"><b>Twitter</b></a>
+</p>
+
+<div align="center">
+    <img src="flutter-kit-logo.png" width="100">
+</div>
+
+## Motivation
+
+Flutter is geat, really. But after few years of development, it's not as easy as it seems; starting a new project can be quite a challenge. The fact that Flutter is as less opinionated has some benefits but also comes with some drawbacks among those the pain of starting a new project. You can easily waste a lot how hours to get productive, while you only wanted to POC a new idea.
+
+This kit provides a set of preconfigured features and utilities to help you get started with your project. It is inspired by my own experience and knowledge of Flutter. I hope you find it useful.
+
+If you are not confortable with some choices i made in the structure, we can either discuss it (yeah i may find it helpful) or fork this repo to create your own.
+
+## What's in this kit?
+This kit includes:
+
+- An example login feature
+- I18n
+- Navigation
+- State management
+- Extensions
+- Utils
 
 ## Get started
 
@@ -27,7 +54,6 @@ $ rename setAppName --targets ios,android --value "MyAppName"
 ```bash
 $ rename setBundleId --targets ios,android --value "com.mycompany.myapp"
 ```
-
 
 ## Features
 This kit comes with a set of preconfigured features and utilities:
@@ -77,7 +103,6 @@ Each time you add an asset, run the following command:
 $ fluttergen
 ```
 
-
 ### CLI
 This kit comes with a few CLI commands to make your life easier.
 It uses make:
@@ -93,6 +118,9 @@ This kit uses the new Material 3 theming system. See the `src/core/theme` folder
 
 The default color scheme is generated using https://m3.material.io/theme-builder#/custom. You can use this tool to generate your own color scheme.
 
+## Showcase
+- [LineAI](https://github.com/stevenosse/lineai)
+
 ## 💼 Need a new feature?
 If you need a new feature, please open an issue on the [GitHub repository](https://github.com/stevenosse/flutter_boilerplate/issues/new)
 
@@ -101,3 +129,4 @@ If you have any questions, feel free to contact me on [Twitter](https://twitter.
 
 ## TODO
 - [ ] Setup a CI pipeline
+- [ ] Add setup for unit tests 
