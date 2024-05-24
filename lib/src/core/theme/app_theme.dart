@@ -12,7 +12,7 @@ class AppTheme {
       textTheme: _buildTextTheme(colors: colors),
       appBarTheme: AppBarTheme(
         surfaceTintColor: Colors.transparent,
-        backgroundColor: colors.background,
+        backgroundColor: colors.surface,
       ),
       cardTheme: CardTheme(
         color: colors.surface,

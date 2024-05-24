@@ -73,8 +73,8 @@ class Button extends StatelessWidget {
       title,
       style: context.textTheme.bodyMedium?.copyWith(
         color: (type == ButtonType.primary || type == ButtonType.neutral)
-            ? context.colorScheme.background
-            : context.colorScheme.onBackground,
+            ? context.colorScheme.surface
+            : context.colorScheme.onSurface,
         fontWeight: type == ButtonType.primary ? FontWeight.w600 : FontWeight.w500,
       ),
     );
@@ -85,9 +85,9 @@ class Button extends StatelessWidget {
         ButtonType.primary || ButtonType.neutral => ElevatedButton.icon(
             onPressed: onPressed,
             style: ElevatedButton.styleFrom(
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(Dimens.borderRadius)),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(Dimens.radius)),
               backgroundColor:
-                  type == ButtonType.primary ? context.colorScheme.primary : context.colorScheme.onBackground,
+                  type == ButtonType.primary ? context.colorScheme.primary : context.colorScheme.onSurface,
             ),
             icon: icon ?? const SizedBox(),
             label: label,
@@ -95,8 +95,8 @@ class Button extends StatelessWidget {
         ButtonType.outline => OutlinedButton.icon(
             onPressed: onPressed,
             style: OutlinedButton.styleFrom(
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(Dimens.borderRadius)),
-              side: BorderSide(color: context.colorScheme.onBackground.withOpacity(.3), width: 1.2),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(Dimens.radius)),
+              side: BorderSide(color: context.colorScheme.onSurface.withOpacity(.3), width: 1.2),
             ),
             icon: icon ?? const SizedBox(),
             label: label,

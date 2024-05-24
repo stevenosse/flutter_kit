@@ -134,7 +134,7 @@ class _LoginScreenState extends State<LoginScreen> {
               Button.outline(
                 icon: SvgPicture.asset(
                   Assets.images.appleLogo,
-                  colorFilter: ColorFilter.mode(context.colorScheme.onBackground, BlendMode.srcIn),
+                  colorFilter: ColorFilter.mode(context.colorScheme.onSurface, BlendMode.srcIn),
                   width: Dimens.iconSize,
                   height: Dimens.iconSize,
                 ),

@@ -25,7 +25,7 @@ class LabeledDivider extends StatelessWidget {
         const Divider(),
         Container(
           padding: labelPadding,
-          color: labelBackgroundColor ?? context.colorScheme.background,
+          color: labelBackgroundColor ?? context.colorScheme.surface,
           child: Text(
             label,
             style: context.textTheme.bodySmall?.copyWith(color: context.colorScheme.onSurface.withOpacity(.8)),

@@ -24,7 +24,7 @@ class BasicCard extends StatelessWidget {
       surfaceTintColor: Colors.transparent,
       margin: EdgeInsets.zero,
       shape: RoundedRectangleBorder(
-        borderRadius: borderRadius ?? BorderRadius.circular(Dimens.borderRadius),
+        borderRadius: borderRadius ?? BorderRadius.circular(Dimens.radius),
       ),
       child: contentChild,
     );

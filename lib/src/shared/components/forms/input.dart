@@ -74,7 +74,7 @@ class Input extends StatelessWidget {
           const Gap.vertical(height: Dimens.minSpacing),
         ],
         ClipRRect(
-          borderRadius: BorderRadius.circular(Dimens.borderRadius),
+          borderRadius: BorderRadius.circular(Dimens.radius),
           child: TextFormField(
             expands: expands,
             autofillHints: autofillHints,
@@ -116,7 +116,7 @@ class Input extends StatelessWidget {
   InputBorder _getInputBorder({required Color color}) => isBorderless
       ? InputBorder.none
       : OutlineInputBorder(
-          borderRadius: BorderRadius.circular(Dimens.borderRadius),
+          borderRadius: BorderRadius.circular(Dimens.radius),
           borderSide: BorderSide(color: color, width: 1.5)
         );
 }

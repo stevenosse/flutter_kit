@@ -5,8 +5,8 @@ class Dimens {
   static const double doubleSpacing = 32.0;
   static const double tripleSpacing = 48.0;
 
-  static const double borderRadius = 12.0;
-  static const double doubleBorderRadius = 24.0;
+  static const double radius = 12.0;
+  static const double doubleRadius = 24.0;
   static const double fullRadius = 999.0;
 
   static const double iconSize = 24.0;
