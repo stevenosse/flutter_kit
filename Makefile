@@ -7,16 +7,16 @@ clean-ios:
 
 codegen:
 	@echo "Generating code..."
-	dart run build_runner build --delete-conflicting-outputs
+	fvm dart run build_runner build --delete-conflicting-outputs
 
 i18n:
 	@echo "Generating i18n..."
-	dart pub run intl_utils:generate
+	fvm dart pub run intl_utils:generate
 
 build-android:
 	@echo "Building Android..."
-	flutter build appbundle --release
+	fvm flutter build appbundle --release
 
 build-ios:
 	@echo "Building iOS..."
-	flutter build ios
+	fvm flutter build ios

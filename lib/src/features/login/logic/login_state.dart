@@ -15,7 +15,7 @@ class LoginState with _$LoginState {
   factory LoginState.error({
     required String email,
     required String password,
-    required Object error,
+    required ApiError error,
   }) = _Error;
 
   factory LoginState.success({

@@ -3,7 +3,10 @@
 <p align="center">Opinionated flutter starter project using feature-first folder structure.</p>
 
 <p align="center">
-    <a href="https://twitter.com/nossesteve"><b>Twitter</b></a>
+    <img alt="GitHub stars" src="https://img.shields.io/github/stars/stevenosse/flutter_kit">
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <img alt="GitHub forks" src="https://img.shields.io/github/forks/stevenosse/flutter_kit">
+
 </p>
 
 <div align="center">
@@ -26,7 +29,8 @@ This kit includes:
 - Navigation
 - State management
 - Extensions
-- Utils
+- Basic config for API calls
+- Theming (Material 3)
 
 ## Get started
 
