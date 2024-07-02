@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:shadcn_ui/shadcn_ui.dart';
 
 extension ThemeDataX on BuildContext {
-  Brightness get brightness => Theme.of(this).brightness;
+  ShadThemeData get theme => ShadTheme.of(this);
 
-  ColorScheme get colorScheme => Theme.of(this).colorScheme;
+  Brightness get brightness => theme.brightness;
 
-  TextTheme get textTheme => Theme.of(this).textTheme;
+  ShadColorScheme get colorScheme => theme.colorScheme;
 
-  ThemeData get theme => Theme.of(this);
+  ShadTextTheme get textTheme => theme.textTheme;
 
-  IconThemeData get iconTheme => Theme.of(this).iconTheme;
-
-  AppBarTheme get appBarTheme => Theme.of(this).appBarTheme;
-
-  BottomAppBarTheme get bottomAppBarTheme => Theme.of(this).bottomAppBarTheme;
-
-  BottomNavigationBarThemeData get bottomNavigationBarTheme => Theme.of(this).bottomNavigationBarTheme;
+  SystemUiOverlayStyle get systemUiOverlayStyle => SystemUiOverlayStyle(
+        statusBarBrightness: theme.brightness,
+        statusBarIconBrightness: theme.brightness == Brightness.dark ? Brightness.light : Brightness.dark,
+        systemNavigationBarColor: theme.colorScheme.background,
+      );
 }
 
 extension MediaQueryX on BuildContext {

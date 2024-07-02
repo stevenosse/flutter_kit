@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_kit/src/core/theme/dimens.dart';
 import 'package:flutter_kit/src/shared/components/gap.dart';
 import 'package:flutter_kit/src/shared/extensions/context_extensions.dart';
+import 'package:shadcn_ui/shadcn_ui.dart';
 
 class Input extends StatelessWidget {
   final FocusNode? focusNode;
@@ -13,7 +14,7 @@ class Input extends StatelessWidget {
   final Widget? prefixIcon;
   final Widget? suffixIcon;
   final Color? cursorColor;
-  final bool? filled;
+
   final bool isPassword;
   final int? minLines;
   final bool isBorderless;
@@ -40,7 +41,6 @@ class Input extends StatelessWidget {
     this.prefixIcon,
     this.suffixIcon,
     this.cursorColor,
-    this.filled,
     this.isPassword = false,
     this.minLines,
     this.isBorderless = false,
@@ -61,7 +61,7 @@ class Input extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Color borderColor = context.colorScheme.outline;
+    final Color borderColor = context.colorScheme.border;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -75,7 +75,7 @@ class Input extends StatelessWidget {
         ],
         ClipRRect(
           borderRadius: BorderRadius.circular(Dimens.radius),
-          child: TextFormField(
+          child: ShadInput(
             expands: expands,
             autofillHints: autofillHints,
             controller: controller,
@@ -88,35 +88,32 @@ class Input extends StatelessWidget {
             maxLines: isPassword ? 1 : maxLines,
             keyboardType: keyboardType,
             textInputAction: textInputAction,
-            onFieldSubmitted: onSubmitted,
+            suffix: suffixIcon,
+            prefix: prefixIcon,
+            onSubmitted: onSubmitted,
             textCapitalization: textCapitalization ?? TextCapitalization.sentences,
-            decoration: InputDecoration(
-              contentPadding: const EdgeInsets.symmetric(vertical: Dimens.halfSpacing, horizontal: Dimens.spacing),
-              hintText: hintText,
-              hintStyle: hintStyle,
-              filled: filled,
-              fillColor: fillColor ?? context.colorScheme.surface,
-              prefixIcon: prefixIcon,
-              suffixIcon: suffixIcon,
-              enabled: enabled,
-              errorBorder: _getInputBorder(color: context.colorScheme.error),
-              enabledBorder: _getInputBorder(color: borderColor),
+            placeholder: Text(
+              hintText ?? '',
+              style: hintStyle ?? context.textTheme.p.copyWith(fontWeight: FontWeight.w500),
+            ),
+            inputPadding: const EdgeInsets.symmetric(horizontal: Dimens.minSpacing, vertical: Dimens.halfSpacing),
+            decoration: ShadDecoration(
+              errorBorder: _getInputBorder(color: context.colorScheme.destructive),
               border: _getInputBorder(color: borderColor),
-              focusedErrorBorder: _getInputBorder(color: context.colorScheme.error),
               focusedBorder: _getInputBorder(color: context.colorScheme.primary),
             ),
             onChanged: onChanged,
-            validator: validator,
           ),
         ),
       ],
     );
   }
 
-  InputBorder _getInputBorder({required Color color}) => isBorderless
-      ? InputBorder.none
-      : OutlineInputBorder(
-          borderRadius: BorderRadius.circular(Dimens.radius),
-          borderSide: BorderSide(color: color, width: 1.5)
+  ShadBorder _getInputBorder({required Color color}) => isBorderless
+      ? ShadBorder.none
+      : ShadBorder(
+          radius: BorderRadius.circular(Dimens.radius),
+          width: 1.5,
+          color: color,
         );
 }

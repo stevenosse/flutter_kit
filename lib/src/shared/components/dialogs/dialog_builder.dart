@@ -19,7 +19,7 @@ class LoadingDialog {
             canPop: false,
             child: AlertDialog.adaptive(
               surfaceTintColor: Colors.transparent,
-              backgroundColor: context.colorScheme.surface,
+              backgroundColor: context.colorScheme.accent,
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(Dimens.radius)),
               content: Padding(
                 padding: const EdgeInsets.all(Dimens.halfSpacing),
