@@ -73,6 +73,9 @@ class _$ApiResponseCopyWithImpl<R, E, $Res, $Val extends ApiResponse<R, E>>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of ApiResponse
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -94,6 +97,8 @@ class __$$ApiResponseSuccessImplCopyWithImpl<R, E, $Res>
       $Res Function(_$ApiResponseSuccessImpl<R, E>) _then)
       : super(_value, _then);
 
+  /// Create a copy of ApiResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -133,7 +138,9 @@ class _$ApiResponseSuccessImpl<R, E> implements _ApiResponseSuccess<R, E> {
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(response));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ApiResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ApiResponseSuccessImplCopyWith<R, E, _$ApiResponseSuccessImpl<R, E>>
@@ -209,7 +216,10 @@ abstract class _ApiResponseSuccess<R, E> implements ApiResponse<R, E> {
 
   @override
   R get response;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ApiResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ApiResponseSuccessImplCopyWith<R, E, _$ApiResponseSuccessImpl<R, E>>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -231,6 +241,8 @@ class __$$ApiResponseErrorImplCopyWithImpl<R, E, $Res>
       $Res Function(_$ApiResponseErrorImpl<R, E>) _then)
       : super(_value, _then);
 
+  /// Create a copy of ApiResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -270,7 +282,9 @@ class _$ApiResponseErrorImpl<R, E> implements _ApiResponseError<R, E> {
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(response));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ApiResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ApiResponseErrorImplCopyWith<R, E, _$ApiResponseErrorImpl<R, E>>
@@ -345,7 +359,10 @@ abstract class _ApiResponseError<R, E> implements ApiResponse<R, E> {
 
   @override
   E get response;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ApiResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ApiResponseErrorImplCopyWith<R, E, _$ApiResponseErrorImpl<R, E>>
       get copyWith => throw _privateConstructorUsedError;
 }

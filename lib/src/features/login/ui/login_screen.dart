@@ -32,10 +32,10 @@ class LoginScreen extends StatefulWidget implements AutoRouteWrapper {
 
 class _LoginScreenState extends State<LoginScreen> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-
-  bool _isPasswordVisible = false;
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+
+  bool _isPasswordVisible = false;
 
   @override
   void dispose() {
@@ -62,7 +62,7 @@ class _LoginScreenState extends State<LoginScreen> {
               const Gap.vertical(height: Dimens.tripleSpacing),
               Text(
                 I18n.of(context).login_title,
-                style: context.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
+                style: context.textTheme.titleLarge,
               ),
               const Gap.vertical(height: Dimens.minSpacing),
               Text(I18n.of(context).login_subtitle, style: context.textTheme.bodyMedium),

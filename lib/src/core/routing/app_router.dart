@@ -4,7 +4,7 @@ import 'package:flutter_kit/src/features/login/ui/login_screen.dart';
 part 'app_router.gr.dart';
 
 @AutoRouterConfig(replaceInRouteName: 'Screen,Route')
-class AppRouter extends _$AppRouter {
+class AppRouter extends RootStackRouter {
   @override
   List<AutoRoute> routes = [
     AutoRoute(page: LoginRoute.page, initial: true),

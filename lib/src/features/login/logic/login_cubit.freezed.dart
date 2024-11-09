@@ -22,7 +22,8 @@ mixin _$LoginState {
   TResult when<TResult extends Object?>({
     required TResult Function(String email, String password) initial,
     required TResult Function(String email, String password) loading,
-    required TResult Function(String email, String password, Object error)
+    required TResult Function(
+            String email, String password, ApiError<dynamic> error)
         error,
     required TResult Function(String email, String password, Object response)
         success,
@@ -32,7 +33,8 @@ mixin _$LoginState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String email, String password)? initial,
     TResult? Function(String email, String password)? loading,
-    TResult? Function(String email, String password, Object error)? error,
+    TResult? Function(String email, String password, ApiError<dynamic> error)?
+        error,
     TResult? Function(String email, String password, Object response)? success,
   }) =>
       throw _privateConstructorUsedError;
@@ -40,7 +42,8 @@ mixin _$LoginState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String email, String password)? initial,
     TResult Function(String email, String password)? loading,
-    TResult Function(String email, String password, Object error)? error,
+    TResult Function(String email, String password, ApiError<dynamic> error)?
+        error,
     TResult Function(String email, String password, Object response)? success,
     required TResult orElse(),
   }) =>
@@ -71,7 +74,9 @@ mixin _$LoginState {
   }) =>
       throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $LoginStateCopyWith<LoginState> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -95,6 +100,8 @@ class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -133,6 +140,8 @@ class __$$InitialImplCopyWithImpl<$Res>
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -180,7 +189,9 @@ class _$InitialImpl implements _Initial {
   @override
   int get hashCode => Object.hash(runtimeType, email, password);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>
@@ -191,7 +202,8 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function(String email, String password) initial,
     required TResult Function(String email, String password) loading,
-    required TResult Function(String email, String password, Object error)
+    required TResult Function(
+            String email, String password, ApiError<dynamic> error)
         error,
     required TResult Function(String email, String password, Object response)
         success,
@@ -204,7 +216,8 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String email, String password)? initial,
     TResult? Function(String email, String password)? loading,
-    TResult? Function(String email, String password, Object error)? error,
+    TResult? Function(String email, String password, ApiError<dynamic> error)?
+        error,
     TResult? Function(String email, String password, Object response)? success,
   }) {
     return initial?.call(email, password);
@@ -215,7 +228,8 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String email, String password)? initial,
     TResult Function(String email, String password)? loading,
-    TResult Function(String email, String password, Object error)? error,
+    TResult Function(String email, String password, ApiError<dynamic> error)?
+        error,
     TResult Function(String email, String password, Object response)? success,
     required TResult orElse(),
   }) {
@@ -272,8 +286,11 @@ abstract class _Initial implements LoginState {
   String get email;
   @override
   String get password;
+
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -297,6 +314,8 @@ class __$$LoadingImplCopyWithImpl<$Res>
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -344,7 +363,9 @@ class _$LoadingImpl implements _Loading {
   @override
   int get hashCode => Object.hash(runtimeType, email, password);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$LoadingImplCopyWith<_$LoadingImpl> get copyWith =>
@@ -355,7 +376,8 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function(String email, String password) initial,
     required TResult Function(String email, String password) loading,
-    required TResult Function(String email, String password, Object error)
+    required TResult Function(
+            String email, String password, ApiError<dynamic> error)
         error,
     required TResult Function(String email, String password, Object response)
         success,
@@ -368,7 +390,8 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String email, String password)? initial,
     TResult? Function(String email, String password)? loading,
-    TResult? Function(String email, String password, Object error)? error,
+    TResult? Function(String email, String password, ApiError<dynamic> error)?
+        error,
     TResult? Function(String email, String password, Object response)? success,
   }) {
     return loading?.call(email, password);
@@ -379,7 +402,8 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String email, String password)? initial,
     TResult Function(String email, String password)? loading,
-    TResult Function(String email, String password, Object error)? error,
+    TResult Function(String email, String password, ApiError<dynamic> error)?
+        error,
     TResult Function(String email, String password, Object response)? success,
     required TResult orElse(),
   }) {
@@ -436,8 +460,11 @@ abstract class _Loading implements LoginState {
   String get email;
   @override
   String get password;
+
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$LoadingImplCopyWith<_$LoadingImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -449,7 +476,7 @@ abstract class _$$ErrorImplCopyWith<$Res> implements $LoginStateCopyWith<$Res> {
       __$$ErrorImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String email, String password, Object error});
+  $Res call({String email, String password, ApiError<dynamic> error});
 }
 
 /// @nodoc
@@ -460,6 +487,8 @@ class __$$ErrorImplCopyWithImpl<$Res>
       _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -476,7 +505,10 @@ class __$$ErrorImplCopyWithImpl<$Res>
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String,
-      error: null == error ? _value.error : error,
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as ApiError<dynamic>,
     ));
   }
 }
@@ -492,7 +524,7 @@ class _$ErrorImpl implements _Error {
   @override
   final String password;
   @override
-  final Object error;
+  final ApiError<dynamic> error;
 
   @override
   String toString() {
@@ -507,14 +539,15 @@ class _$ErrorImpl implements _Error {
             (identical(other.email, email) || other.email == email) &&
             (identical(other.password, password) ||
                 other.password == password) &&
-            const DeepCollectionEquality().equals(other.error, error));
+            (identical(other.error, error) || other.error == error));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, email, password, const DeepCollectionEquality().hash(error));
+  int get hashCode => Object.hash(runtimeType, email, password, error);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
@@ -525,7 +558,8 @@ class _$ErrorImpl implements _Error {
   TResult when<TResult extends Object?>({
     required TResult Function(String email, String password) initial,
     required TResult Function(String email, String password) loading,
-    required TResult Function(String email, String password, Object error)
+    required TResult Function(
+            String email, String password, ApiError<dynamic> error)
         error,
     required TResult Function(String email, String password, Object response)
         success,
@@ -538,7 +572,8 @@ class _$ErrorImpl implements _Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String email, String password)? initial,
     TResult? Function(String email, String password)? loading,
-    TResult? Function(String email, String password, Object error)? error,
+    TResult? Function(String email, String password, ApiError<dynamic> error)?
+        error,
     TResult? Function(String email, String password, Object response)? success,
   }) {
     return error?.call(email, password, this.error);
@@ -549,7 +584,8 @@ class _$ErrorImpl implements _Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String email, String password)? initial,
     TResult Function(String email, String password)? loading,
-    TResult Function(String email, String password, Object error)? error,
+    TResult Function(String email, String password, ApiError<dynamic> error)?
+        error,
     TResult Function(String email, String password, Object response)? success,
     required TResult orElse(),
   }) {
@@ -601,15 +637,18 @@ abstract class _Error implements LoginState {
   factory _Error(
       {required final String email,
       required final String password,
-      required final Object error}) = _$ErrorImpl;
+      required final ApiError<dynamic> error}) = _$ErrorImpl;
 
   @override
   String get email;
   @override
   String get password;
-  Object get error;
+  ApiError<dynamic> get error;
+
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -633,6 +672,8 @@ class __$$SuccessImplCopyWithImpl<$Res>
       _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -687,7 +728,9 @@ class _$SuccessImpl implements _Success {
   int get hashCode => Object.hash(runtimeType, email, password,
       const DeepCollectionEquality().hash(response));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
@@ -698,7 +741,8 @@ class _$SuccessImpl implements _Success {
   TResult when<TResult extends Object?>({
     required TResult Function(String email, String password) initial,
     required TResult Function(String email, String password) loading,
-    required TResult Function(String email, String password, Object error)
+    required TResult Function(
+            String email, String password, ApiError<dynamic> error)
         error,
     required TResult Function(String email, String password, Object response)
         success,
@@ -711,7 +755,8 @@ class _$SuccessImpl implements _Success {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String email, String password)? initial,
     TResult? Function(String email, String password)? loading,
-    TResult? Function(String email, String password, Object error)? error,
+    TResult? Function(String email, String password, ApiError<dynamic> error)?
+        error,
     TResult? Function(String email, String password, Object response)? success,
   }) {
     return success?.call(email, password, response);
@@ -722,7 +767,8 @@ class _$SuccessImpl implements _Success {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String email, String password)? initial,
     TResult Function(String email, String password)? loading,
-    TResult Function(String email, String password, Object error)? error,
+    TResult Function(String email, String password, ApiError<dynamic> error)?
+        error,
     TResult Function(String email, String password, Object response)? success,
     required TResult orElse(),
   }) {
@@ -781,8 +827,11 @@ abstract class _Success implements LoginState {
   @override
   String get password;
   Object get response;
+
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
