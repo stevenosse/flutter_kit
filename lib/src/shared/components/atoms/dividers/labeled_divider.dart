@@ -19,7 +19,7 @@ class LabeledDivider extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const Divider(),
+        const Expanded(child: Divider()),
         Padding(
           padding: labelPadding,
           child: Text(
@@ -29,7 +29,7 @@ class LabeledDivider extends StatelessWidget {
             ),
           ),
         ),
-        const Divider(),
+        const Expanded(child: Divider()),
       ],
     );
   }
