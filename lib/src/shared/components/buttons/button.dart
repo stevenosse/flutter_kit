@@ -96,7 +96,7 @@ class Button extends StatelessWidget {
             onPressed: onPressed,
             style: OutlinedButton.styleFrom(
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(Dimens.radius)),
-              side: BorderSide(color: context.colorScheme.onSurface.withOpacity(.3), width: 1.2),
+              side: BorderSide(color: context.colorScheme.onSurface.withValues(alpha: .3), width: 1.2),
             ),
             icon: icon ?? const SizedBox(),
             label: label,

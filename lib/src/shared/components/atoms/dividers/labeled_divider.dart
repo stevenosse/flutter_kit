@@ -7,30 +7,29 @@ class LabeledDivider extends StatelessWidget {
   final String label;
   final EdgeInsetsGeometry labelPadding;
   final Color? labelBackgroundColor;
-  final Alignment labelAlignment;
 
   const LabeledDivider({
     required this.label,
     this.labelPadding = const EdgeInsets.symmetric(horizontal: Dimens.spacing),
     super.key,
     this.labelBackgroundColor,
-    this.labelAlignment = Alignment.center,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      alignment: labelAlignment,
+    return Row(
       children: [
         const Divider(),
-        Container(
+        Padding(
           padding: labelPadding,
-          color: labelBackgroundColor ?? context.colorScheme.surface,
           child: Text(
             label,
-            style: context.textTheme.bodySmall?.copyWith(color: context.colorScheme.onSurface.withOpacity(.8)),
+            style: context.textTheme.bodySmall?.copyWith(
+              color: context.colorScheme.onSurface.withValues(alpha: .8),
+            ),
           ),
-        )
+        ),
+        const Divider(),
       ],
     );
   }
