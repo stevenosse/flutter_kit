@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kit/src/core/theme/dimens.dart';
-import 'package:flutter_kit/src/shared/components/gap.dart';
 import 'package:flutter_kit/src/shared/extensions/context_extensions.dart';
 
 class Input extends StatelessWidget {
@@ -71,7 +70,7 @@ class Input extends StatelessWidget {
             labelText!,
             style: Theme.of(context).textTheme.bodySmall?.copyWith(fontWeight: FontWeight.w500),
           ),
-          const Gap.vertical(height: Dimens.minSpacing),
+          const SizedBox(height: Dimens.minSpacing),
         ],
         ClipRRect(
           borderRadius: BorderRadius.circular(Dimens.radius),

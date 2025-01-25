@@ -5,11 +5,11 @@ import 'package:flutter_kit/gen/assets.gen.dart';
 import 'package:flutter_kit/src/core/i18n/l10n.dart';
 import 'package:flutter_kit/src/core/theme/dimens.dart';
 import 'package:flutter_kit/src/features/login/logic/login_cubit.dart';
+import 'package:flutter_kit/src/shared/components/app_snackbar.dart';
 import 'package:flutter_kit/src/shared/components/atoms/dividers/labeled_divider.dart';
 import 'package:flutter_kit/src/shared/components/buttons/button.dart';
 import 'package:flutter_kit/src/shared/components/dialogs/dialog_builder.dart';
 import 'package:flutter_kit/src/shared/components/forms/input.dart';
-import 'package:flutter_kit/src/shared/components/gap.dart';
 import 'package:flutter_kit/src/shared/extensions/context_extensions.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:iconsax_plus/iconsax_plus.dart';
@@ -59,14 +59,14 @@ class _LoginScreenState extends State<LoginScreen> {
           child: ListView(
             padding: const EdgeInsets.all(Dimens.spacing),
             children: [
-              const Gap.vertical(height: Dimens.tripleSpacing),
+              const SizedBox(height: Dimens.tripleSpacing),
               Text(
                 I18n.of(context).login_title,
                 style: context.textTheme.titleLarge,
               ),
-              const Gap.vertical(height: Dimens.minSpacing),
+              const SizedBox(height: Dimens.minSpacing),
               Text(I18n.of(context).login_subtitle, style: context.textTheme.bodyMedium),
-              const Gap.vertical(height: Dimens.doubleSpacing),
+              const SizedBox(height: Dimens.doubleSpacing),
               AutofillGroup(
                 child: Form(
                   key: _formKey,
@@ -81,7 +81,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         onChanged: context.read<LoginCubit>().onEmailChanged,
                         textInputAction: TextInputAction.next,
                       ),
-                      const Gap.vertical(height: Dimens.spacing),
+                      const SizedBox(height: Dimens.spacing),
                       Input(
                         autofillHints: const [AutofillHints.password],
                         controller: _passwordController,
@@ -103,7 +103,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
               ),
-              const Gap.vertical(height: Dimens.spacing),
+              const SizedBox(height: Dimens.spacing),
               Align(
                 alignment: Alignment.centerRight,
                 child: TextButton(
@@ -111,16 +111,16 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Text(I18n.of(context).login_forgotPasswordLabel),
                 ),
               ),
-              const Gap.vertical(height: Dimens.spacing),
+              const SizedBox(height: Dimens.spacing),
               Button.primary(
                 title: I18n.of(context).login_submitBtnLabel,
                 onPressed: _onLogin,
               ),
-              const Gap.vertical(height: Dimens.doubleSpacing),
+              const SizedBox(height: Dimens.doubleSpacing),
               LabeledDivider(
                 label: I18n.of(context).or,
               ),
-              const Gap.vertical(height: Dimens.doubleSpacing),
+              const SizedBox(height: Dimens.doubleSpacing),
               Button.outline(
                 icon: SvgPicture.asset(
                   Assets.images.googleLogo,
@@ -130,7 +130,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 title: I18n.of(context).login_googleBtnLabel,
                 onPressed: () {},
               ),
-              const Gap.vertical(height: Dimens.spacing),
+              const SizedBox(height: Dimens.spacing),
               Button.outline(
                 icon: SvgPicture.asset(
                   Assets.images.appleLogo,

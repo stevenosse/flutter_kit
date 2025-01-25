@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kit/src/core/theme/color_schemes.dart';
+import 'package:flutter_kit/src/core/theme/custom_colors.dart';
 
 class AppTheme {
   static const _fontFamily = 'GeneralSans';
@@ -18,6 +19,7 @@ class AppTheme {
         color: colors.surface,
       ),
       colorScheme: colors,
+      extensions: [brightness == Brightness.light ? CustomColors.light : CustomColors.dark],
     );
   }
 
