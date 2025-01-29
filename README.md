@@ -39,24 +39,39 @@ This kit includes:
 git clone git@github.com:stevenosse/flutter_kit.git
 ```
 
-### 2. Customize the project
+### 2. Configure your project
 
-- Install the [rename](https://pub.dev/packages/rename) tool by executing the following command:
+Add your configuration to the `pubspec.yaml` file under the `flutter_kit` key:
 
-````bash
-flutter pub global activate rename
-````
-
-#### Change app name
-
-```bash
-$ rename setAppName --targets ios,android --value "MyAppName"
+```yaml
+flutter_kit:
+  app_name: Your App Name
+  ios_bundle_id: com.yourcompany.yourapp
+  android_package_name: com.yourcompany.yourapp
 ```
 
-#### Change package name
+### 3. Run the setup script
 
+#### On macOS/Linux:
 ```bash
-$ rename setBundleId --targets ios,android --value "com.mycompany.myapp"
+chmod +x setup.sh
+./setup.sh
+```
+
+#### On Windows:
+```bash
+setup.bat
+```
+
+The setup script will:
+- Update your app name for both iOS and Android
+- Change the iOS bundle identifier
+- Change the Android package name
+- Move the Android files to the correct package structure
+
+### 4. Run flutter pub get
+```bash
+flutter pub get
 ```
 
 ## Features

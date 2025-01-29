@@ -90,3 +90,8 @@ flutter_intl:
   main_locale: en
   arb_dir: lib/src/core/i18n/l10n
   output_dir: lib/src/core/i18n
+
+flutter_kit:
+  app_name: "Flutter Kit"
+  ios_bundle_id: com.example.flutter_kit
+  android_package_name: com.example.flutter_kit
