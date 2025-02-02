@@ -95,3 +95,4 @@ flutter_kit:
   app_name: "Flutter Kit"
   ios_bundle_id: com.example.flutter_kit
   android_package_name: com.example.flutter_kit
+  dart_package: flutter_kit

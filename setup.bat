@@ -18,11 +18,16 @@ for /f "tokens=2 delims=:" %%a in ('findstr /r "^  android_package_name:" pubspe
     set "ANDROID_PACKAGE_NAME=%%a"
     set "ANDROID_PACKAGE_NAME=!ANDROID_PACKAGE_NAME: =!"
 )
+for /f "tokens=2 delims=:" %%a in ('findstr /r "^  dart_package:" pubspec.yaml') do (
+    set "DART_PACKAGE=%%a"
+    set "DART_PACKAGE=!DART_PACKAGE: =!"
+)
 
 echo Configuration from pubspec.yaml:
 echo App Name: !APP_NAME!
 echo iOS Bundle ID: !IOS_BUNDLE_ID!
 echo Android Package Name: !ANDROID_PACKAGE_NAME!
+echo Dart Package Name: !DART_PACKAGE!
 echo.
 
 :: Get current applicationId and namespace from build.gradle
@@ -52,6 +57,16 @@ echo Updating AndroidManifest.xml...
 for /r "android" %%F in (AndroidManifest.xml) do (
     powershell -Command "(Get-Content '%%F') -replace 'package=\"!OLD_NAMESPACE!\"', 'package=\"!ANDROID_PACKAGE_NAME!\"' -replace 'android:label=\"[^\"]*\"', 'android:label=\"!APP_NAME!\"' | Set-Content '%%F'"
 )
+
+:: Update Dart package name in lib files
+echo Updating Dart package name in files...
+for /r "lib" %%F in (*.dart) do (
+    powershell -Command "(Get-Content '%%F') -replace 'package:flutter_kit/', 'package:!DART_PACKAGE!/' | Set-Content '%%F'"
+)
+
+:: Update package name in pubspec.yaml
+echo Updating package name in pubspec.yaml...
+powershell -Command "(Get-Content 'pubspec.yaml') -replace '^name: .*', 'name: !DART_PACKAGE!' | Set-Content 'pubspec.yaml'"
 
 :: Move Java/Kotlin files to new package structure
 echo Moving Android files to new package structure...

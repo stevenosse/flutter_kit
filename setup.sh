@@ -20,11 +20,13 @@ read_pubspec_value() {
 APP_NAME=$(read_pubspec_value "app_name")
 IOS_BUNDLE_ID=$(read_pubspec_value "ios_bundle_id")
 ANDROID_PACKAGE_NAME=$(read_pubspec_value "android_package_name")
+DART_PACKAGE=$(read_pubspec_value "dart_package")
 
 echo -e "${GREEN}Configuration from pubspec.yaml:${NC}"
 echo "App Name: $APP_NAME"
 echo "iOS Bundle ID: $IOS_BUNDLE_ID"
 echo "Android Package Name: $ANDROID_PACKAGE_NAME"
+echo "Dart Package Name: $DART_PACKAGE"
 echo ""
 
 # Check if running on macOS for iOS updates
@@ -96,6 +98,16 @@ if [ -d "$KOTLIN_PATH/$OLD_PATH" ]; then
     find "$KOTLIN_PATH/$OLD_PATH" -type f -delete
     find "$KOTLIN_PATH" -type d -empty -delete
 fi
+
+# Update Dart package name in files
+echo -e "${BLUE}Updating Dart package name in files...${NC}"
+find lib -type f -name "*.dart" -exec sed -i.bak "s/package:flutter_kit\//package:$DART_PACKAGE\//g" {} \;
+find lib -name "*.bak" -type f -delete
+
+# Update package name in pubspec.yaml
+echo -e "${BLUE}Updating package name in pubspec.yaml...${NC}"
+sed -i.bak "s/^name: .*/name: $DART_PACKAGE/" pubspec.yaml
+rm -f pubspec.yaml.bak
 
 echo -e "${GREEN}Android configuration updated successfully!${NC}"
 echo "Please rebuild your project:"
