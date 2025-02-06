@@ -58,10 +58,10 @@ packages:
     dependency: "direct dev"
     description:
       name: auto_route_generator
-      sha256: c2e359d8932986d4d1bcad7a428143f81384ce10fef8d4aa5bc29e1f83766a46
+      sha256: c9086eb07271e51b44071ad5cff34e889f3156710b964a308c2ab590769e79e6
       url: "https://pub.dev"
     source: hosted
-    version: "9.3.1"
+    version: "9.0.0"
   bloc:
     dependency: transitive
     description:
@@ -210,10 +210,10 @@ packages:
     dependency: transitive
     description:
       name: dart_style
-      sha256: "27eb0ae77836989a3bc541ce55595e8ceee0992807f14511552a898ddd0d88ac"
+      sha256: "7306ab8a2359a48d22310ad823521d723acfed60ee1f7e37388e8986853b6820"
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.1"
+    version: "2.3.8"
   dio:
     dependency: "direct main"
     description:
@@ -318,10 +318,10 @@ packages:
     dependency: "direct dev"
     description:
       name: freezed
-      sha256: "62b248b2dfb06ded10c84b713215b25aea020a5b08c32e801a974361557ebc3f"
+      sha256: "44c19278dd9d89292cf46e97dc0c1e52ce03275f40a97c5a348e802a924bf40e"
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.0-0.0.dev"
+    version: "2.5.7"
   freezed_annotation:
     dependency: "direct main"
     description:
@@ -406,10 +406,10 @@ packages:
     dependency: "direct main"
     description:
       name: intl_utils
-      sha256: e0fa279731c3122c542e92262f11d2ff9365460701f0227971c149dcdff2f6da
+      sha256: "35f9a55004871f241e24b07465cf402914992d8549a60205ee0816576a8ddee7"
       url: "https://pub.dev"
     source: hosted
-    version: "2.8.9"
+    version: "2.8.8"
   io:
     dependency: transitive
     description:
@@ -438,10 +438,10 @@ packages:
     dependency: "direct dev"
     description:
       name: json_serializable
-      sha256: b0a98230538fe5d0b60a22fb6bf1b6cb03471b53e3324ff6069c591679dd59c9
+      sha256: c2fcb3920cf2b6ae6845954186420fca40bc0a8abcc84903b7801f17d7050d7c
       url: "https://pub.dev"
     source: hosted
-    version: "6.9.3"
+    version: "6.9.0"
   leak_tracker:
     dependency: transitive
     description:
@@ -723,10 +723,10 @@ packages:
     dependency: transitive
     description:
       name: source_gen
-      sha256: "35c8150ece9e8c8d263337a265153c3329667640850b9304861faea59fc98f6b"
+      sha256: "14658ba5f669685cd3d63701d01b31ea748310f7ab854e471962670abcf57832"
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.0"
+    version: "1.5.0"
   source_helper:
     dependency: transitive
     description:
