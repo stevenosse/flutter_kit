@@ -22,6 +22,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "dialog_cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+        "dialog_confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
         "loadingDialog_content":
             MessageLookupByLibrary.simpleMessage("Please wait..."),
         "login_appleBtnLabel":

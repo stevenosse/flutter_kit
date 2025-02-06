@@ -1,3 +1,4 @@
+import 'package:flutter_kit/src/core/i18n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_kit/src/core/theme/dimens.dart';
 import 'package:flutter_kit/src/shared/extensions/context_extensions.dart';
@@ -9,6 +10,7 @@ class ConfirmationDialog {
     required String message,
     String? confirmText,
     String? cancelText,
+    Color? confirmButtonColor,
   }) async {
     final result = await showDialog<bool>(
       context: context,
@@ -26,11 +28,14 @@ class ConfirmationDialog {
           actions: [
             TextButton(
               onPressed: () => Navigator.of(context).pop(false),
-              child: Text(cancelText ?? 'Cancel'),
+              child: Text(cancelText ?? I18n.of(context).dialog_cancel),
             ),
             TextButton(
               onPressed: () => Navigator.of(context).pop(true),
-              child: Text(confirmText ?? 'Confirm'),
+              child: Text(
+                confirmText ?? I18n.of(context).dialog_confirm,
+                style: TextStyle(color: confirmButtonColor),
+              ),
             ),
           ],
         );

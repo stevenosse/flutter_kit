@@ -14,5 +14,8 @@
 
   "loadingDialog_content": "Please wait...",
 
+  "dialog_cancel": "Cancel",
+  "dialog_confirm": "Confirm",
+
   "or": "OR"
 }

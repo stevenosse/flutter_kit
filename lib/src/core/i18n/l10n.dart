@@ -160,6 +160,26 @@ class I18n {
     );
   }
 
+  /// `Cancel`
+  String get dialog_cancel {
+    return Intl.message(
+      'Cancel',
+      name: 'dialog_cancel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm`
+  String get dialog_confirm {
+    return Intl.message(
+      'Confirm',
+      name: 'dialog_confirm',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `OR`
   String get or {
     return Intl.message(
