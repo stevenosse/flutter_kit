@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://stevenosse.github.io/flutter_kit/sitemap.xml
