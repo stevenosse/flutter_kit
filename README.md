@@ -79,7 +79,7 @@ This kit comes with a set of preconfigured features and utilities:
 
 - I18n
 - Navigation (using auto_route)
-- State management (using BLoC & freezed)
+- State management (using plain change notifier)
 - Extensions (on context, iterable)
 - Utility widgets
 - Default Theming using Material 3
@@ -101,10 +101,9 @@ This kit uses [auto_route](https://pub.dev/packages/auto_route) for navigation. 
 See the [auto_route documentation](https://pub.dev/packages/auto_route) for more information.
 
 ## 🧱 State Management
-This kit uses [BLoC](https://pub.dev/packages/flutter_bloc) for state management. 
-See the [BLoC documentation](https://bloclibrary.dev/#/gettingstarted) for more information.
+This kit uses plain change notifiers for state management. 
 
-An example of a BLoC can be found in the `src/features/home_screen/logic` folder.
+An example of a change notifier can be found in the `src/features/login/logic` folder.
 
 ## 🗼 Extensions
 This kit comes with a few extensions on the `BuildContext` and `Iterable` classes. See the `src/shared/extensions` folder for more information.

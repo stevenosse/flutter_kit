@@ -1,6 +1,6 @@
-part of 'login_cubit.dart';
+part of 'login_controller.dart';
 
-sealed class LoginState {
+sealed class LoginState extends Equatable {
   final String email;
   final String password;
 
@@ -9,23 +9,23 @@ sealed class LoginState {
     required this.password,
   });
 
-  factory LoginState.initial({
+  const factory LoginState.initial({
     required String email,
     required String password,
   }) = _LoginInitial;
 
-  factory LoginState.loading({
+  const factory LoginState.loading({
     required String email,
     required String password,
   }) = _LoginLoading;
 
-  factory LoginState.error({
+  const factory LoginState.error({
     required String email,
     required String password,
     required ApiError error,
   }) = _LoginError;
 
-  factory LoginState.success({
+  const factory LoginState.success({
     required String email,
     required String password,
     required Object response,
@@ -68,10 +68,16 @@ sealed class LoginState {
 
 final class _LoginInitial extends LoginState {
   const _LoginInitial({required super.email, required super.password});
+
+  @override
+  List<Object?> get props => [email, password];
 }
 
 final class _LoginLoading extends LoginState {
   const _LoginLoading({required super.email, required super.password});
+
+  @override
+  List<Object?> get props => [email, password];
 }
 
 final class _LoginError extends LoginState {
@@ -82,6 +88,9 @@ final class _LoginError extends LoginState {
     required super.password,
     required this.error,
   });
+
+  @override
+  List<Object?> get props => [email, password, error];
 }
 
 final class _LoginSuccess extends LoginState {
@@ -92,4 +101,7 @@ final class _LoginSuccess extends LoginState {
     required super.password,
     required this.response,
   });
+
+  @override
+  List<Object?> get props => [email, password, response];
 }
