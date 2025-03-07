@@ -6,6 +6,7 @@ class ExampleApi {
   ExampleApi({required this.dio});
 
   Future<String> getExample() async {
+    await Future.delayed(const Duration(seconds: 2));
     return 'Example';
   }
 }
