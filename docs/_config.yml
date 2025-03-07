@@ -1,0 +1,6 @@
+theme: jekyll-theme-minimal
+title: Flutter Kit
+description: A modern starter kit for Flutter projects
+show_downloads: true
+github:
+  repository_url: https://github.com/stevenosse/flutter_kit

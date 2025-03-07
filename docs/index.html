@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flutter Kit - Bootstrap your Flutter projects</title>
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <meta name="description" content="Flutter Kit - A modern starter kit for Flutter projects with pre-configured i18n, routing, state management, and more.">
+    <meta property="og:title" content="Flutter Kit - Bootstrap Your Flutter Projects">
+    <meta property="og:description" content="A modern, feature-rich starter kit for Flutter developers. Save time with pre-configured i18n, routing, state management, and more.">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="noise"></div>
+    <header>
+        <nav>
+            <div class="container nav-container">
+                <div class="logo">
+                    <a href="#"><span class="highlight">Flutter</span>Kit</a>
+                </div>
+                <div class="nav-links">
+                    <a href="#features">Features</a>
+                    <a href="#getting-started">Getting Started</a>
+                    <a href="#docs">Documentation</a>
+                    <a href="https://github.com/stevenosse/flutter_kit" target="_blank">GitHub</a>
+                </div>
+                <button class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+        
+        <div class="hero container">
+            <div class="hero-content">
+                <h1>Bootstrap your Flutter projects in seconds</h1>
+                <p>A modern, feature-rich starter kit for Flutter developers. Save time with pre-configured i18n, routing, state management, and more.</p>
+                <div class="cta-buttons">
+                    <a href="#getting-started" class="btn btn-primary">Get Started</a>
+                    <a href="https://github.com/stevenosse/flutter_kit" class="btn btn-secondary" target="_blank">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="code-preview">
+                    <div class="code-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <span class="filename">main.dart</span>
+                    </div>
+                    <pre><code>import 'package:flutter/material.dart';
+import 'package:flutter_kit/flutter_kit.dart';
+
+void main() async {
+  // Initialize the app
+  await AppInitializer().preAppRun();
+  
+  runApp(const MyApp());
+  
+  // Post-initialization tasks
+  await AppInitializer().postAppRun();
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp.router(
+      title: 'Flutter Kit App',
+      theme: AppTheme.light,
+      darkTheme: AppTheme.dark,
+      routerConfig: appRouter,
+    );
+  }
+}</code></pre>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>I18n</h3>
+                    <p>Built-in i18n support with easy-to-use translation system.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-route"></i>
+                    </div>
+                    <h3>Routing</h3>
+                    <p>Pre-configured GoRouter for seamless navigation and deep linking.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Storage</h3>
+                    <p>Type-safe storage service with SharedPreferences support.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cubes"></i>
+                    </div>
+                    <h3>State Management</h3>
+                    <p>Integrated BLoC pattern with sealed classes for type-safe states.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>API Integration</h3>
+                    <p>Ready-to-use HTTP client with error handling and response parsing.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>Theming</h3>
+                    <p>Consistent theming system with light and dark mode support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="getting-started" class="getting-started">
+        <div class="container">
+            <h2 class="section-title">Getting Started</h2>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Clone the Repository</h3>
+                        <div class="code-block">
+                            <pre><code>git clone https://github.com/stevenosse/flutter_kit.git &lt;YOUR_PROJECT_NAME&gt;</code></pre>
+                            <button class="copy-btn" data-clipboard-text="git clone https://github.com/stevenosse/flutter_kit.git">
+                                <i class="far fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Install Dependencies</h3>
+                        <div class="code-block">
+                            <pre><code>cd &lt;YOUR_PROJECT_NAME&gt;
+flutter pub get</code></pre>
+                            <button class="copy-btn" data-clipboard-text="cd flutter_kit
+flutter pub get">
+                                <i class="far fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Run the Example App</h3>
+                        <div class="code-block">
+                            <pre><code>flutter run</code></pre>
+                            <button class="copy-btn" data-clipboard-text="flutter run">
+                                <i class="far fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="docs" class="documentation">
+        <div class="container">
+            <h2 class="section-title">Documentation</h2>
+            <div class="docs-grid">
+                <a href="https://pub.dev/packages/auto_route" class="docs-card">
+                    <h3>Routing</h3>
+                    <p>This kit uses the auto_route package for routing.</p>
+                    <span class="arrow-icon">→</span>
+                </a>
+                <a href="https://pub.dev/packages/intl_utils" class="docs-card">
+                    <h3>I18n</h3>
+                    <p>This kit uses the intl_utils package for i18n.</p>
+                    <span class="arrow-icon">→</span>
+                </a>
+                <a href="https://pub.dev/packages/flutter_bloc" class="docs-card">
+                    <h3>State Management</h3>
+                    <p>This kit uses the flutter_bloc package for state management.</p>
+                    <span class="arrow-icon">→</span>
+                </a>
+                <a href="https://pub.dev/packages/shared_preferences" class="docs-card">
+                    <h3>Storage</h3>
+                    <p>This kit uses the shared_preferences package for storage.</p>
+                    <span class="arrow-icon">→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="https://github.com/stevenosse/flutter_kit" target="_blank"><span class="highlight">Flutter</span>Kit</a>
+                    <p>A modern Flutter starter kit.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <a href="#features">Features</a>
+                        <a href="#getting-started">Getting Started</a>
+                        <a href="#docs">Documentation</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Community</h4>
+                        <a href="https://github.com/stevenosse/flutter_kit" target="_blank">GitHub</a>
+                        <a href="https://github.com/stevenosse/flutter_kit/issues" target="_blank">Issues</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FlutterKit. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="https://github.com/stevenosse/flutter_kit" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://twitter.com/nossesteve" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
