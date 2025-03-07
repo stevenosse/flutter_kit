@@ -18,17 +18,20 @@ class I18n {
   static I18n? _current;
 
   static I18n get current {
-    assert(_current != null,
-        'No instance of I18n was loaded. Try to initialize the I18n delegate before accessing I18n.current.');
+    assert(
+      _current != null,
+      'No instance of I18n was loaded. Try to initialize the I18n delegate before accessing I18n.current.',
+    );
     return _current!;
   }
 
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<I18n> load(Locale locale) {
-    final name = (locale.countryCode?.isEmpty ?? false)
-        ? locale.languageCode
-        : locale.toString();
+    final name =
+        (locale.countryCode?.isEmpty ?? false)
+            ? locale.languageCode
+            : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -41,8 +44,10 @@ class I18n {
 
   static I18n of(BuildContext context) {
     final instance = I18n.maybeOf(context);
-    assert(instance != null,
-        'No instance of I18n present in the widget tree. Did you add I18n.delegate in localizationsDelegates?');
+    assert(
+      instance != null,
+      'No instance of I18n present in the widget tree. Did you add I18n.delegate in localizationsDelegates?',
+    );
     return instance!;
   }
 
@@ -52,12 +57,7 @@ class I18n {
 
   /// `Login`
   String get login_title {
-    return Intl.message(
-      'Login',
-      name: 'login_title',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Login', name: 'login_title', desc: '', args: []);
   }
 
   /// `Let's continue where we left off.`
@@ -72,12 +72,7 @@ class I18n {
 
   /// `Email`
   String get login_emailLabel {
-    return Intl.message(
-      'Email',
-      name: 'login_emailLabel',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Email', name: 'login_emailLabel', desc: '', args: []);
   }
 
   /// `Ex: KpNqg@example.com`
@@ -162,32 +157,17 @@ class I18n {
 
   /// `Cancel`
   String get dialog_cancel {
-    return Intl.message(
-      'Cancel',
-      name: 'dialog_cancel',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Cancel', name: 'dialog_cancel', desc: '', args: []);
   }
 
   /// `Confirm`
   String get dialog_confirm {
-    return Intl.message(
-      'Confirm',
-      name: 'dialog_confirm',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Confirm', name: 'dialog_confirm', desc: '', args: []);
   }
 
   /// `OR`
   String get or {
-    return Intl.message(
-      'OR',
-      name: 'or',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('OR', name: 'or', desc: '', args: []);
   }
 }
 
@@ -195,9 +175,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<I18n> {
   const AppLocalizationDelegate();
 
   List<Locale> get supportedLocales {
-    return const <Locale>[
-      Locale.fromSubtags(languageCode: 'en'),
-    ];
+    return const <Locale>[Locale.fromSubtags(languageCode: 'en')];
   }
 
   @override

@@ -22,26 +22,31 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "dialog_cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
-        "dialog_confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
-        "loadingDialog_content":
-            MessageLookupByLibrary.simpleMessage("Please wait..."),
-        "login_appleBtnLabel":
-            MessageLookupByLibrary.simpleMessage("Sign in with Apple"),
-        "login_emailHint":
-            MessageLookupByLibrary.simpleMessage("Ex: KpNqg@example.com"),
-        "login_emailLabel": MessageLookupByLibrary.simpleMessage("Email"),
-        "login_forgotPasswordLabel":
-            MessageLookupByLibrary.simpleMessage("Forgot password?"),
-        "login_googleBtnLabel":
-            MessageLookupByLibrary.simpleMessage("Sign in with Google"),
-        "login_passwordHint":
-            MessageLookupByLibrary.simpleMessage("************"),
-        "login_passwordLabel": MessageLookupByLibrary.simpleMessage("Password"),
-        "login_submitBtnLabel": MessageLookupByLibrary.simpleMessage("Login"),
-        "login_subtitle": MessageLookupByLibrary.simpleMessage(
-            "Let\'s continue where we left off."),
-        "login_title": MessageLookupByLibrary.simpleMessage("Login"),
-        "or": MessageLookupByLibrary.simpleMessage("OR")
-      };
+    "dialog_cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+    "dialog_confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
+    "loadingDialog_content": MessageLookupByLibrary.simpleMessage(
+      "Please wait...",
+    ),
+    "login_appleBtnLabel": MessageLookupByLibrary.simpleMessage(
+      "Sign in with Apple",
+    ),
+    "login_emailHint": MessageLookupByLibrary.simpleMessage(
+      "Ex: KpNqg@example.com",
+    ),
+    "login_emailLabel": MessageLookupByLibrary.simpleMessage("Email"),
+    "login_forgotPasswordLabel": MessageLookupByLibrary.simpleMessage(
+      "Forgot password?",
+    ),
+    "login_googleBtnLabel": MessageLookupByLibrary.simpleMessage(
+      "Sign in with Google",
+    ),
+    "login_passwordHint": MessageLookupByLibrary.simpleMessage("************"),
+    "login_passwordLabel": MessageLookupByLibrary.simpleMessage("Password"),
+    "login_submitBtnLabel": MessageLookupByLibrary.simpleMessage("Login"),
+    "login_subtitle": MessageLookupByLibrary.simpleMessage(
+      "Let\'s continue where we left off.",
+    ),
+    "login_title": MessageLookupByLibrary.simpleMessage("Login"),
+    "or": MessageLookupByLibrary.simpleMessage("OR"),
+  };
 }
