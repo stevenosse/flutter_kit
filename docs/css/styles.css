@@ -251,10 +251,12 @@ nav {
   gap: 4rem;
   padding: 4rem 0;
   align-items: center;
+  width: 100%;
 }
 
 .hero-content {
   max-width: 540px;
+  width: 100%;
 }
 
 .cta-buttons {
@@ -595,11 +597,13 @@ footer {
   .hero {
     grid-template-columns: 1fr;
     gap: 3rem;
+    padding: 2rem 0;
   }
   
   .hero-content {
     max-width: 100%;
     text-align: center;
+    padding: 0 1rem;
   }
   
   .cta-buttons {
@@ -608,6 +612,8 @@ footer {
   
   .code-preview {
     transform: none;
+    max-width: 100%;
+    overflow-x: auto;
   }
   
   .footer-content {
@@ -651,7 +657,9 @@ footer {
 
 @media (max-width: 576px) {
   h1 {
-    font-size: 2.25rem;
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
   }
   
   h2 {
@@ -660,6 +668,15 @@ footer {
   
   .container {
     padding: 0 1.5rem;
+  }
+  
+  .hero {
+    padding: 1rem 0;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+    line-height: 1.5;
   }
   
   .step {

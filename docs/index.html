@@ -1,25 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flutter Kit - Bootstrap your Flutter projects</title>
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
-    <meta name="description" content="Flutter Kit - A modern starter kit for Flutter projects with pre-configured i18n, routing, state management, and more.">
+    <meta name="description"
+        content="Flutter Kit - A modern starter kit for Flutter projects with pre-configured i18n, routing, state management, and more.">
     <meta property="og:title" content="Flutter Kit - Bootstrap Your Flutter Projects">
-    <meta property="og:description" content="A modern, feature-rich starter kit for Flutter developers. Save time with pre-configured i18n, routing, state management, and more.">
+    <meta property="og:description"
+        content="A modern, feature-rich starter kit for Flutter developers. Save time with pre-configured i18n, routing, state management, and more.">
     <meta property="og:type" content="website">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .github-stars {
+            display: inline-flex;
+            align-items: center;
+            background-color: var(--bg-secondary);
+            border-radius: 2rem;
+            padding: 0.25rem 0.75rem;
+            margin-left: 0.5rem;
+            color: var(--text-color);
+            font-weight: 500;
+            font-size: 0.875rem;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+            vertical-align: middle;
+            line-height: 1.5;
+            height: 32px;
+        }
+
+        .github-stars:focus {
+            outline: none;
+        }
+
+        .github-stars:active {
+            transform: translateY(1px);
+        }
+
+        .github-stars-icon {
+            color: #f0db4f;
+            margin-right: 0.25rem;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .github-stars {
+                position: fixed;
+                top: 1.25rem;
+                right: 5rem;
+                margin: 0;
+                z-index: 30;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links.active .github-stars {
+                display: none;
+            }
+
+            .hero {
+                padding-top: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+                line-height: 1.2;
+                margin-bottom: 1rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+                line-height: 1.5;
+                margin-bottom: 1.5rem;
+            }
+        }
+    </style>
 </head>
+
 <body>
     <div class="noise"></div>
     <header>
         <nav>
-            <div class="container nav-container">
+            <div class="container nav-container" style="position: relative;">
                 <div class="logo">
                     <a href="#"><span class="highlight">Flutter</span>Kit</a>
                 </div>
@@ -28,6 +108,10 @@
                     <a href="#getting-started">Getting Started</a>
                     <a href="#docs">Documentation</a>
                     <a href="https://github.com/stevenosse/flutter_kit" target="_blank">GitHub</a>
+                    <button id="github-star-button" class="github-stars">
+                        <span class="github-stars-icon"><i class="fas fa-star"></i></span>
+                        <span class="github-stars-count" id="github-stars-count">-</span>
+                    </button>
                 </div>
                 <button class="mobile-menu-btn">
                     <span></span>
@@ -36,11 +120,12 @@
                 </button>
             </div>
         </nav>
-        
+
         <div class="hero container">
             <div class="hero-content">
                 <h1>Bootstrap your Flutter projects in seconds</h1>
-                <p>A modern, feature-rich starter kit for Flutter developers. Save time with pre-configured i18n, routing, state management, and more.</p>
+                <p>A modern, feature-rich starter kit for Flutter developers. Save time with pre-configured i18n,
+                    routing, state management, and more.</p>
                 <div class="cta-buttons">
                     <a href="#getting-started" class="btn btn-primary">Get Started</a>
                     <a href="https://github.com/stevenosse/flutter_kit" class="btn btn-secondary" target="_blank">
@@ -147,7 +232,8 @@ class MyApp extends StatelessWidget {
                         <h3>Clone the Repository</h3>
                         <div class="code-block">
                             <pre><code>git clone https://github.com/stevenosse/flutter_kit.git &lt;YOUR_PROJECT_NAME&gt;</code></pre>
-                            <button class="copy-btn" data-clipboard-text="git clone https://github.com/stevenosse/flutter_kit.git <YOUR_PROJECT_NAME>">
+                            <button class="copy-btn"
+                                data-clipboard-text="git clone https://github.com/stevenosse/flutter_kit.git <YOUR_PROJECT_NAME>">
                                 <i class="far fa-copy"></i>
                             </button>
                         </div>
@@ -215,7 +301,8 @@ flutter pub get">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <a href="https://github.com/stevenosse/flutter_kit" target="_blank"><span class="highlight">Flutter</span>Kit</a>
+                    <a href="https://github.com/stevenosse/flutter_kit" target="_blank"><span
+                            class="highlight">Flutter</span>Kit</a>
                     <p>A modern Flutter starter kit.</p>
                 </div>
                 <div class="footer-links">
@@ -235,7 +322,8 @@ flutter pub get">
             <div class="footer-bottom">
                 <p>&copy; 2025 FlutterKit. All rights reserved.</p>
                 <div class="social-links">
-                    <a href="https://github.com/stevenosse/flutter_kit" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://github.com/stevenosse/flutter_kit" target="_blank"><i
+                            class="fab fa-github"></i></a>
                     <a href="https://twitter.com/nossesteve" target="_blank"><i class="fab fa-twitter"></i></a>
                 </div>
             </div>
@@ -244,5 +332,23 @@ flutter pub get">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        // Fetch GitHub stars count
+        fetch('https://api.github.com/repos/stevenosse/flutter_kit')
+            .then(response => response.json())
+            .then(data => {
+                const starsCount = document.getElementById('github-stars-count');
+                if (starsCount && data.stargazers_count !== undefined) {
+                    starsCount.textContent = data.stargazers_count;
+                }
+            })
+            .catch(error => console.error('Error fetching GitHub stars:', error));
+
+        // Add star button functionality
+        document.getElementById('github-star-button').addEventListener('click', function () {
+            window.open('https://github.com/stevenosse/flutter_kit/stargazers', '_blank');
+        });
+    </script>
 </body>
+
 </html>
