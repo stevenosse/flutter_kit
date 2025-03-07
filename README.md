@@ -1,6 +1,6 @@
 <h1 align="center"><b>Flutter Kit</b></h1>
 
-<p align="center">Opinionated flutter starter project using feature-first folder structure.</p>
+<p align="center">Opinionated flutter starter project using feature-first folder structure with BLoC pattern for state management.</p>
 
 <p align="center">
     <img alt="GitHub stars" src="https://img.shields.io/github/stars/stevenosse/flutter_kit">
@@ -79,7 +79,7 @@ This kit comes with a set of preconfigured features and utilities:
 
 - I18n
 - Navigation (using auto_route)
-- State management (using plain change notifier)
+- State management (using plain change notifiers)
 - Extensions (on context, iterable)
 - Utility widgets
 - Default Theming using Material 3
@@ -101,9 +101,15 @@ This kit uses [auto_route](https://pub.dev/packages/auto_route) for navigation. 
 See the [auto_route documentation](https://pub.dev/packages/auto_route) for more information.
 
 ## 🧱 State Management
-This kit uses plain change notifiers for state management. 
+This kit uses the ChangeNotifier pattern for state management, providing a simple and efficient way to manage application state without additional dependencies.
 
-An example of a change notifier can be found in the `src/features/login/logic` folder.
+Key components of the state management approach:
+
+- **Controllers**: Classes that extend `ChangeNotifier` to manage state and business logic (see `src/features/login/logic/login_controller.dart`).
+- **State Classes**: Immutable classes that represent different states of a feature (see `src/features/login/logic/login_state.dart`).
+- **ListenableConsumer**: A custom widget that efficiently combines listening for state changes and rebuilding UI (see `src/shared/components/business/listenable_consumer.dart`).
+
+This approach provides a clean separation of concerns while maintaining simplicity and testability.
 
 ## 🗼 Extensions
 This kit comes with a few extensions on the `BuildContext` and `Iterable` classes. See the `src/shared/extensions` folder for more information.
@@ -147,4 +153,5 @@ If you have any questions, feel free to contact me on [Twitter](https://twitter.
 
 ## TODO
 - [ ] Setup a CI pipeline
-- [ ] Add setup for unit tests 
+- [ ] Add setup for unit tests
+- [x] Replace BLoC with ChangeNotifier pattern

@@ -1,5 +1,5 @@
 name: flutter_kit
-description: A boilerplate for Flutter Projects using BLoC Architecture
+description: A boilerplate for Flutter Projects using BLoC pattern for state management
 
 publish_to: 'none'
 
