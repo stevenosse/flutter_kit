@@ -2,9 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_kit/src/datasource/models/api_response/api_response.dart';
 import 'package:flutter_kit/src/datasource/repositories/example_repository.dart';
 import 'package:flutter_kit/src/shared/locator.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'login_cubit.freezed.dart';
 part 'login_state.dart';
 
 class LoginCubit extends Cubit<LoginState> {
@@ -13,14 +11,14 @@ class LoginCubit extends Cubit<LoginState> {
   LoginCubit({
     ExampleRepository? exampleRepository,
   })  : _exampleRepository = exampleRepository ?? locator<ExampleRepository>(),
-        super(LoginState.initial(email: '', password: ''));
+        super(const _LoginInitial(email: '', password: ''));
 
   void onEmailChanged(String email) {
-    emit(LoginState.initial(email: email, password: state.password));
+    emit(_LoginInitial(email: email, password: state.password));
   }
 
   void onPasswordChanged(String password) {
-    emit(LoginState.initial(password: password, email: state.email));
+    emit(_LoginInitial(password: password, email: state.email));
   }
 
   void login() async {
@@ -28,8 +26,8 @@ class LoginCubit extends Cubit<LoginState> {
 
     final response = await _exampleRepository.getExample();
     response.when(
-      success: (data) => emit(LoginState.success(email: state.email, password: state.password, response: data)),
-      error: (error) => emit(LoginState.error(email: state.email, password: state.password, error: error)),
+      success: (data) => emit(_LoginSuccess(email: state.email, password: state.password, response: data)),
+      error: (error) => emit(_LoginError(email: state.email, password: state.password, error: error)),
     );
   }
 }

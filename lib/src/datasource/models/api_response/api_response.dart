@@ -1,12 +1,34 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:equatable/equatable.dart';
 
-part 'api_response.freezed.dart';
+sealed class ApiResponse<R, E> {
+  const ApiResponse();
 
-@freezed
-class ApiResponse<R, E> with _$ApiResponse<R, E> {
-  factory ApiResponse.success(R response) = _ApiResponseSuccess;
-  factory ApiResponse.error(E response) = _ApiResponseError;
+  factory ApiResponse.success(R response) = ApiResponseSuccess;
+  factory ApiResponse.error(E response) = ApiResponseError;
+
+  void when({
+    required void Function(R data) success,
+    required void Function(E error) error,
+  }) {
+    switch (this) {
+      case ApiResponseSuccess<R, E> success_:
+        success(success_.response);
+      case ApiResponseError<R, E> error_:
+        error(error_.response);
+    }
+  }
+}
+
+final class ApiResponseSuccess<R, E> extends ApiResponse<R, E> {
+  final R response;
+
+  const ApiResponseSuccess(this.response);
+}
+
+final class ApiResponseError<R, E> extends ApiResponse<R, E> {
+  final E response;
+
+  const ApiResponseError(this.response);
 }
 
 enum ApiErrorType {
