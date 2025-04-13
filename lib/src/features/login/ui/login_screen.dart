@@ -50,11 +50,16 @@ class _LoginScreenState extends State<LoginScreen> {
     return ListenableConsumer<LoginController>(
       listenable: controller,
       listener: (context, notifier) {
-        notifier.value.whenOrNull(
-          loading: (email, password) => LoadingDialog.show(context: context),
-          success: (email, password, response) => LoadingDialog.hide(context: context),
-          error: (email, password, error) => LoadingDialog.hide(context: context),
-        );
+        switch (notifier.value) {
+          case LoginLoading():
+            LoadingDialog.show(context: context);
+          case LoginSuccess():
+            LoadingDialog.hide(context: context);
+          case LoginError():
+            LoadingDialog.hide(context: context);
+          default:
+            break;
+        }
       },
       builder: (context, notifier) {
         return Scaffold(

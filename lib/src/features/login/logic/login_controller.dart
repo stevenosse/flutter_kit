@@ -12,26 +12,26 @@ class LoginController extends ValueNotifier<LoginState> {
   LoginController({
     ExampleRepository? exampleRepository,
   })  : _exampleRepository = exampleRepository ?? locator<ExampleRepository>(),
-        super(LoginState.initial(email: '', password: ''));
+        super(LoginInitial(email: '', password: ''));
 
   void onEmailChanged(String email) {
-    value = LoginState.initial(email: email, password: value.password);
+    value = LoginInitial(email: email, password: value.password);
   }
 
   void onPasswordChanged(String password) {
-    value = LoginState.initial(password: password, email: value.email);
+    value = LoginInitial(password: password, email: value.email);
   }
 
   Future<void> login() async {
-    value = LoginState.loading(email: value.email, password: value.password);
+    value = LoginLoading(email: value.email, password: value.password);
 
     final response = await _exampleRepository.getExample();
 
     response.when(
-      success: (data) => value = LoginState.success(email: value.email, password: value.password, response: data),
-      error: (error) => value = LoginState.error(email: value.email, password: value.password, error: error),
+      success: (data) => value = LoginSuccess(email: value.email, password: value.password, response: data),
+      error: (error) => value = LoginError(email: value.email, password: value.password, error: error),
     );
   }
 
-  void reset() => value = LoginState.initial(email: '', password: '');
+  void reset() => value = LoginInitial(email: '', password: '');
 }
