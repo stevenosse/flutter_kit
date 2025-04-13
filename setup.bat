@@ -30,27 +30,27 @@ echo Android Package Name: !ANDROID_PACKAGE_NAME!
 echo Dart Package Name: !DART_PACKAGE!
 echo.
 
-:: Get current applicationId and namespace from build.gradle
-set "BUILD_GRADLE_PATH=android\app\build.gradle"
-for /f "tokens=2 delims=:" %%a in ('findstr /r "applicationId" "%BUILD_GRADLE_PATH%"') do (
+:: Get current applicationId and namespace from build.gradle.kts
+set "BUILD_GRADLE_PATH=android\app\build.gradle.kts"
+for /f "tokens=2 delims==" %%a in ('findstr /r "applicationId" "%BUILD_GRADLE_PATH%"') do (
     set "OLD_APPLICATION_ID=%%a"
     set "OLD_APPLICATION_ID=!OLD_APPLICATION_ID: =!"
-    set "OLD_APPLICATION_ID=!OLD_APPLICATION_ID:"=!"
+    set "OLD_APPLICATION_ID=!OLD_APPLICATION_ID:\"=!"
 )
-for /f "tokens=2 delims=:" %%a in ('findstr /r "namespace" "%BUILD_GRADLE_PATH%"') do (
+for /f "tokens=2 delims==" %%a in ('findstr /r "namespace" "%BUILD_GRADLE_PATH%"') do (
     set "OLD_NAMESPACE=%%a"
     set "OLD_NAMESPACE=!OLD_NAMESPACE: =!"
-    set "OLD_NAMESPACE=!OLD_NAMESPACE:"=!"
+    set "OLD_NAMESPACE=!OLD_NAMESPACE:\"=!"
 )
 
 echo Current applicationId: !OLD_APPLICATION_ID!
 echo Current namespace: !OLD_NAMESPACE!
 echo New package name: !ANDROID_PACKAGE_NAME!
 
-:: Update build.gradle
-echo Updating build.gradle...
-powershell -Command "(Get-Content '%BUILD_GRADLE_PATH%') -replace 'applicationId \"!OLD_APPLICATION_ID!\"', 'applicationId \"!ANDROID_PACKAGE_NAME!\"' | Set-Content '%BUILD_GRADLE_PATH%'"
-powershell -Command "(Get-Content '%BUILD_GRADLE_PATH%') -replace 'namespace \"!OLD_NAMESPACE!\"', 'namespace \"!ANDROID_PACKAGE_NAME!\"' | Set-Content '%BUILD_GRADLE_PATH%'"
+:: Update build.gradle.kts
+echo Updating build.gradle.kts...
+powershell -Command "(Get-Content '%BUILD_GRADLE_PATH%') -replace 'applicationId = \"!OLD_APPLICATION_ID!\"', 'applicationId = \"!ANDROID_PACKAGE_NAME!\"' | Set-Content '%BUILD_GRADLE_PATH%'"
+powershell -Command "(Get-Content '%BUILD_GRADLE_PATH%') -replace 'namespace = \"!OLD_NAMESPACE!\"', 'namespace = \"!ANDROID_PACKAGE_NAME!\"' | Set-Content '%BUILD_GRADLE_PATH%'"
 
 :: Update AndroidManifest.xml
 echo Updating AndroidManifest.xml...

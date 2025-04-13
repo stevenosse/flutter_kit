@@ -44,20 +44,20 @@ fi
 
 # Android package updates
 echo -e "${BLUE}Updating Android configuration...${NC}"
-BUILD_GRADLE_PATH="android/app/build.gradle"
+BUILD_GRADLE_PATH="android/app/build.gradle.kts"
 
 # Extract current applicationId and namespace
-OLD_APPLICATION_ID=$(grep "applicationId" "$BUILD_GRADLE_PATH" | head -1 | sed "s/.*applicationId \"\(.*\)\"/\1/")
-OLD_NAMESPACE=$(grep "namespace" "$BUILD_GRADLE_PATH" | head -1 | sed "s/.*namespace \"\(.*\)\"/\1/")
+OLD_APPLICATION_ID=$(grep "applicationId" "$BUILD_GRADLE_PATH" | head -1 | sed "s/.*applicationId = \"\(.*\)\".*/\1/")
+OLD_NAMESPACE=$(grep "namespace" "$BUILD_GRADLE_PATH" | head -1 | sed "s/.*namespace = \"\(.*\)\".*/\1/")
 
 echo "Current applicationId: $OLD_APPLICATION_ID"
 echo "Current namespace: $OLD_NAMESPACE"
 echo "New package name: $ANDROID_PACKAGE_NAME"
 
-# Update build.gradle
-echo -e "${BLUE}Updating build.gradle...${NC}"
-sed -i.bak "s/applicationId \"$OLD_APPLICATION_ID\"/applicationId \"$ANDROID_PACKAGE_NAME\"/g" "$BUILD_GRADLE_PATH"
-sed -i.bak "s/namespace \"$OLD_NAMESPACE\"/namespace \"$ANDROID_PACKAGE_NAME\"/g" "$BUILD_GRADLE_PATH"
+# Update build.gradle.kts
+echo -e "${BLUE}Updating build.gradle.kts...${NC}"
+sed -i.bak "s/applicationId = \"$OLD_APPLICATION_ID\"/applicationId = \"$ANDROID_PACKAGE_NAME\"/g" "$BUILD_GRADLE_PATH"
+sed -i.bak "s/namespace = \"$OLD_NAMESPACE\"/namespace = \"$ANDROID_PACKAGE_NAME\"/g" "$BUILD_GRADLE_PATH"
 rm "$BUILD_GRADLE_PATH.bak"
 
 # Update AndroidManifest.xml
