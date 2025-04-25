@@ -18,7 +18,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   dio: ^5.8.0+1
   equatable: ^2.0.7
-  flutter_svg: ^2.0.17
+  flutter_svg: ^2.1.0
   get_it: ^8.0.3
   provider: ^6.1.4
   iconsax_plus: ^1.0.0
@@ -33,7 +33,7 @@ dev_dependencies:
     sdk: flutter
 
   auto_route_generator: ^10.0.1
-  json_serializable: ^6.9.4
+  json_serializable: ^6.9.5
   build_runner: ^2.4.15
   flutter_lints: ^5.0.0
 
