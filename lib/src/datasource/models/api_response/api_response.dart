@@ -57,15 +57,5 @@ class ApiError<T> extends Equatable {
   });
 
   @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
-
-    return other is ApiError<T> && other.type == type && other.error == error;
-  }
-
-  @override
-  int get hashCode => type.hashCode ^ error.hashCode;
-
-  @override
   List<Object?> get props => [type, error];
 }
