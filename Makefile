@@ -11,7 +11,7 @@ codegen:
 
 i18n:
 	@echo "Generating i18n..."
-	fvm dart pub run intl_utils:generate
+	fvm dart run intl_utils:generate
 
 build-android:
 	@echo "Building Android..."
