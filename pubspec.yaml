@@ -14,15 +14,15 @@ dependencies:
   flutter_localizations:
     sdk: flutter
 
-  auto_route: ^10.0.1
+  auto_route: ^10.1.0
   cupertino_icons: ^1.0.8
   dio: ^5.8.0+1
   equatable: ^2.0.7
   flutter_svg: ^2.1.0
   get_it: ^8.0.3
-  provider: ^6.1.4
+  provider: ^6.1.5
   iconsax_plus: ^1.0.0
-  intl: ^0.19.0
+  intl: ^0.20.2
   intl_utils: ^2.8.10
   json_annotation: ^4.9.0
   logger: ^2.5.0
@@ -32,10 +32,10 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  auto_route_generator: ^10.0.1
+  auto_route_generator: ^10.2.3
   json_serializable: ^6.9.5
   build_runner: ^2.4.15
-  flutter_lints: ^5.0.0
+  flutter_lints: ^6.0.0
 
 flutter:
   uses-material-design: true

@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_kit/src/core/environment.dart';
 import 'package:flutter_kit/src/core/i18n/l10n.dart';
 import 'package:flutter_kit/src/core/routing/app_router.dart';
 import 'package:flutter_kit/src/core/theme/app_theme.dart';
@@ -17,7 +18,7 @@ class Application extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: 'MyApp',
+      title: Environment.appName,
       routerConfig: _appRouter.config(
         navigatorObservers: () => [
           AutoRouteObserver(),

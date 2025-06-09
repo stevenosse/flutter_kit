@@ -20,3 +20,7 @@ build-android:
 build-ios:
 	@echo "Building iOS..."
 	fvm flutter build ios
+
+get:
+	@echo "Getting dependencies..."
+	fvm flutter pub get

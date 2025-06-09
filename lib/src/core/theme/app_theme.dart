@@ -15,7 +15,7 @@ class AppTheme {
         surfaceTintColor: Colors.transparent,
         backgroundColor: colors.surface,
       ),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: colors.surface,
         shadowColor: colors.shadow.withValues(alpha: .5),
       ),
