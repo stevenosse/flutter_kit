@@ -1,15 +1,15 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_kit/src/shared/components/feedback/dialogs/loading_dialog.dart';
+import 'package:flutter_kit/src/shared/components/ui/atoms/dividers/labeled_divider.dart';
+import 'package:flutter_kit/src/shared/components/ui/inputs/buttons/button.dart';
+import 'package:flutter_kit/src/shared/components/ui/inputs/forms/input.dart';
+import 'package:flutter_kit/src/shared/components/utils/state/listenable_consumer.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_kit/gen/assets.gen.dart';
 import 'package:flutter_kit/src/core/i18n/l10n.dart';
 import 'package:flutter_kit/src/core/theme/dimens.dart';
 import 'package:flutter_kit/src/features/login/logic/login_controller.dart';
-import 'package:flutter_kit/src/shared/components/atoms/dividers/labeled_divider.dart';
-import 'package:flutter_kit/src/shared/components/business/listenable_consumer.dart';
-import 'package:flutter_kit/src/shared/components/buttons/button.dart';
-import 'package:flutter_kit/src/shared/components/dialogs/loading_dialog.dart';
-import 'package:flutter_kit/src/shared/components/forms/input.dart';
 import 'package:flutter_kit/src/shared/extensions/context_extensions.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:iconsax_plus/iconsax_plus.dart';
@@ -126,9 +126,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   onPressed: _onLogin,
                 ),
                 const SizedBox(height: Dimens.doubleSpacing),
-                LabeledDivider(
-                  label: I18n.of(context).or,
-                ),
+                LabeledDivider(label: I18n.of(context).or),
                 const SizedBox(height: Dimens.doubleSpacing),
                 Button.outline(
                   icon: SvgPicture.asset(
