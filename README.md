@@ -101,9 +101,9 @@ This kit uses [auto_route](https://pub.dev/packages/auto_route) for navigation. 
 See the [auto_route documentation](https://pub.dev/packages/auto_route) for more information.
 
 ## 🧱 State Management
-This kit uses plain change notifiers for state management. 
+This kit uses a ViewModel architecture built on top of provider and change notifiers.
 
-An example of a change notifier can be found in the `src/features/login/logic` folder.
+An example of a ViewModel can be found in the `src/features/login/logic` folder.
 
 ## 🗼 Extensions
 This kit comes with a few extensions on the `BuildContext` and `Iterable` classes. See the `src/shared/extensions` folder for more information.

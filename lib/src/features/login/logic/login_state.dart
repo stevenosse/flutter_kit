@@ -1,4 +1,4 @@
-part of 'login_controller.dart';
+part of 'login_view_model.dart';
 
 sealed class LoginState extends Equatable {
   final String email;

@@ -15,16 +15,16 @@ dependencies:
     sdk: flutter
 
   auto_route: ^11.1.0
-  cupertino_icons: ^1.0.8
+  cupertino_icons: ^1.0.9
   dio: ^5.9.2
   equatable: ^2.0.8
-  flutter_svg: ^2.2.4
+  flutter_svg: ^2.3.0
   get_it: ^9.2.1
   provider: ^6.1.5
   iconsax_plus: ^1.0.0
   intl: ^0.20.2
   intl_utils: ^2.8.14
-  json_annotation: ^4.11.0
+  json_annotation: ^4.12.0
   logger: ^2.7.0
   shared_preferences: ^2.5.5
   
@@ -33,8 +33,8 @@ dev_dependencies:
     sdk: flutter
 
   auto_route_generator: ^10.5.0
-  json_serializable: ^6.13.1
-  build_runner: ^2.14.1
+  json_serializable: ^6.14.0
+  build_runner: ^2.15.0
   flutter_lints: ^6.0.0
 
 flutter:

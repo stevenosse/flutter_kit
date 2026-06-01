@@ -9,7 +9,7 @@ import 'package:provider/provider.dart';
 import 'package:flutter_kit/gen/assets.gen.dart';
 import 'package:flutter_kit/src/core/i18n/l10n.dart';
 import 'package:flutter_kit/src/core/theme/dimens.dart';
-import 'package:flutter_kit/src/features/login/logic/login_controller.dart';
+import 'package:flutter_kit/src/features/login/logic/login_view_model.dart';
 import 'package:flutter_kit/src/shared/extensions/context_extensions.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:iconsax_plus/iconsax_plus.dart';
@@ -24,7 +24,7 @@ class LoginScreen extends StatefulWidget implements AutoRouteWrapper {
   @override
   Widget wrappedRoute(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (_) => LoginController(),
+      create: (_) => LoginViewModel(),
       child: this,
     );
   }
@@ -46,11 +46,11 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Provider.of<LoginController>(context, listen: false);
-    return ListenableConsumer<LoginController>(
-      listenable: controller,
+    final viewModel = Provider.of<LoginViewModel>(context, listen: false);
+    return ListenableConsumer<LoginViewModel>(
+      listenable: viewModel,
       listener: (context, notifier) {
-        switch (notifier.value) {
+        switch (notifier.state) {
           case LoginLoading():
             LoadingDialog.show(context: context);
           case LoginSuccess():
@@ -87,7 +87,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           controller: _emailController,
                           labelText: I18n.of(context).login_emailLabel,
                           hintText: I18n.of(context).login_emailHint,
-                          onChanged: context.read<LoginController>().onEmailChanged,
+                          onChanged: context.read<LoginViewModel>().onEmailChanged,
                           textInputAction: TextInputAction.next,
                         ),
                         const SizedBox(height: Dimens.spacing),
@@ -97,7 +97,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           isPassword: !_isPasswordVisible,
                           labelText: I18n.of(context).login_passwordLabel,
                           hintText: I18n.of(context).login_passwordHint,
-                          onChanged: context.read<LoginController>().onPasswordChanged,
+                          onChanged: context.read<LoginViewModel>().onPasswordChanged,
                           textInputAction: TextInputAction.done,
                           suffixIcon: IconButton(
                             onPressed: () => setState(() => _isPasswordVisible = !_isPasswordVisible),
@@ -156,5 +156,5 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  void _onLogin() => context.read<LoginController>().login();
+  void _onLogin() => context.read<LoginViewModel>().login();
 }
